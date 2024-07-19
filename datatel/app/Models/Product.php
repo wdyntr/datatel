@@ -7,15 +7,17 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
+    protected $table = 'datapelanggan';
+
     use HasFactory;
 
     protected $fillable = [
         'witel',
-        'ubis',   
-        'Id_Number',   
-        'Nama_Akun',   
-        'AM',   
-        'NIPNAS',   
-        'Nama_Grup',   
+        'ubis',
+        'id_number',
+        'nama_akun',
+        'am',
+        'nipnas',
+        'nama_grup',
     ];
 }

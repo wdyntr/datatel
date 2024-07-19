@@ -12,7 +12,9 @@ class ProductController extends Controller
      */
     public function index()
     {
-        return view('products.index');
+        $product = Product::orderBy('created_at', 'DESC')->get();
+
+        return view('products.index', compact('product'));
     }
 
     /**
@@ -30,7 +32,7 @@ class ProductController extends Controller
     {
         Product::create($request->all());
 
-        return redirect()->route('products')->with('success', 'Berhasil Ditambahkan');
+        return redirect()->route('products')->with('success', 'Data berhasil ditambahkan!');
     }
 
     /**

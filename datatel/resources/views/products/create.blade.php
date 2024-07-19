@@ -12,7 +12,7 @@
             <input type="text" name="witel" class="form-control" placeholder="Witel">
         </div>
         <div class="col">
-            <input type="text" name="price" class="form-control" placeholder="Ubis">
+            <input type="text" name="ubis" class="form-control" placeholder="Ubis">
         </div>
     </div>
     <div class="row mb-3">

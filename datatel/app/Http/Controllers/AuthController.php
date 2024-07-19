@@ -24,14 +24,16 @@ class AuthController extends Controller
             'password' => 'required|confirmed'
         ])->validate();
 
-        User::create([
+        $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
             'level' => 'Admin'
         ]);
 
-        return redirect()->route('login');
+        Auth::login($user);
+
+        return redirect()->route('dashboard');
 
     }
 
