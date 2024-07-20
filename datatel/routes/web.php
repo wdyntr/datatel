@@ -24,14 +24,14 @@ Route::middleware('auth')->group(function () {
         return view('dashboard');
     })->name('dashboard');
 
-    Route::controller(ProductController::class)->prefix('products')->group(function () {
-        Route::get('', 'index')->name('products');
-        Route::get('create', 'create')->name('products.create');
-        Route::post('store', 'store')->name('products.store');
-        Route::get('show/{id}', 'show')->name('products.show');
-        Route::get('edit/{id}', 'edit')->name('products.edit');
-        Route::put('edit/{id}', 'update')->name('products.update');
-        Route::delete('destroy/{id}', 'destroy')->name('products.destroy');
+    Route::controller(ProductController::class)->prefix('dataPelanggan')->group(function () {
+        Route::get('', 'index')->name('dataPelanggan');
+        Route::get('create', 'create')->name('dataPelanggan.create');
+        Route::post('store', 'store')->name('dataPelanggan.store');
+        Route::get('show/{id}', 'show')->name('dataPelanggan.show');
+        Route::get('edit/{id}', 'edit')->name('dataPelanggan.edit');
+        Route::put('edit/{id}', 'update')->name('dataPelanggan.update');
+        Route::delete('destroy/{id}', 'destroy')->name('dataPelanggan.destroy');
     });
 
     Route::get('/profile', [App\Http\Controllers\AuthController::class, 'profile'])->name('profile');

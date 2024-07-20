@@ -19,7 +19,7 @@
     </li>
 
     <li class="nav-item">
-        <a class="nav-link" href="{{ route('products') }}">
+        <a class="nav-link" href="{{ route('dataPelanggan') }}">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Data Pelanggan</span></a>
     </li>

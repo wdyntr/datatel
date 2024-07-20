@@ -4,8 +4,8 @@
 
 @section('contents')
 <div class="d-flex align-items-center justify-content-between">
-    <h1 class="mb-0">List Product</h1>
-    <a href="{{ route('products.create') }}" class="btn btn-primary">Add Product</a>
+    <h1 class="mb-0">List Data Pelanggan</h1>
+    <a href="{{ route('dataPelanggan.create') }}" class="btn btn-primary">Add data</a>
 </div>
 <hr />
 @if(Session::has('success'))
@@ -24,9 +24,10 @@
             <th>AM</th>
             <th>NIPNAS</th>
             <th>Nama Grup</th>
+            <th>Action</th>
         </tr>
     </thead>
-    <tbody>+
+    <tbody>
         @if($product->count() > 0)
             @foreach($product as $rs)
                 <tr>
@@ -40,9 +41,9 @@
                     <td class="align-middle">{{ $rs->nama_grup }}</td>
                     <td class="align-middle">
                         <div class="btn-group" role="group" aria-label="Basic example">
-                            <a href="{{ route('products.show', $rs->id) }}" type="button" class="btn btn-secondary">Detail</a>
-                            <a href="{{ route('products.edit', $rs->id)}}" type="button" class="btn btn-warning">Edit</a>
-                            <form action="{{ route('products.destroy', $rs->id) }}" method="POST" type="button"
+                            <a href="{{ route('dataPelanggan.show', $rs->id) }}" type="button" class="btn btn-secondary">Detail</a>
+                            <a href="{{ route('dataPelanggan.edit', $rs->id)}}" type="button" class="btn btn-warning">Edit</a>
+                            <form action="{{ route('dataPelanggan.destroy', $rs->id) }}" method="POST" type="button"
                                 class="btn btn-danger p-0" onsubmit="return confirm('Delete?')">
                                 @csrf
                                 @method('DELETE')
