@@ -3,7 +3,7 @@
 @section('title', 'Dashboard - Data Pelanggan')
 
 @section('contents')
-<div class="row" style="border:2px solid red;">
+<div class="row">
 
                         <!-- Earnings (Monthly) Card Example -->
                         <div class="col-xl-3 col-md-6 mb-4" >

@@ -1,7 +1,5 @@
 @extends('layouts.app')
-  
-@section('title', 'Show Data')
-  
+    
 @section('contents')
     <h1 class="mb-0">Detail Data</h1>
     <hr />

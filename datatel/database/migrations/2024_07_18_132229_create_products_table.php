@@ -12,13 +12,13 @@ return new class extends Migration {
     {
         Schema::create('datapelanggan', function (Blueprint $table) {
             $table->id();
-            $table->string("witel");
-            $table->string("ubis");
-            $table->integer("id_number");
-            $table->string("nama_akun");
-            $table->string("am");
-            $table->bigInteger("nipnas");
-            $table->string("nama_grup");
+            $table->string("witel")->nullable();
+            $table->string("ubis")->nullable();
+            $table->integer("id_number")->nullable();
+            $table->string("nama_akun")->nullable();
+            $table->string("am")->nullable();
+            $table->bigInteger("nipnas")->nullable();
+            $table->string("nama_grup")->nullable();
             $table->timestamps();
         });
     }

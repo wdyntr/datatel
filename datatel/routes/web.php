@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\smaController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -32,6 +33,14 @@ Route::middleware('auth')->group(function () {
         Route::get('edit/{id}', 'edit')->name('dataPelanggan.edit');
         Route::put('edit/{id}', 'update')->name('dataPelanggan.update');
         Route::delete('destroy/{id}', 'destroy')->name('dataPelanggan.destroy');
+    });
+
+    Route::controller(smaController::class)->prefix('sma')->group(function () {
+        Route::get('', 'index')->name('sma');
+        Route::get('create', 'create')->name('sma.create');
+        Route::post('store', 'store')->name('sma.store');
+        Route::get('show/{id}', 'show')->name('sma.show');
+
     });
 
     Route::get('/profile', [App\Http\Controllers\AuthController::class, 'profile'])->name('profile');

@@ -30,7 +30,17 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        Product::create($request->all());
+        $data = $request->validate([
+            'witel' => 'nullable|string',
+            'ubis' => 'nullable|string',
+            'id_number' => 'nullable|integer',
+            'nama_akun' => 'nullable|string',
+            'am' => 'nullable|string',
+            'nipnas' => 'nullable|integer',
+            'nama_grup' => 'nullable|string',
+        ]);
+
+        Product::create($data);
 
         return redirect()->route('dataPelanggan')->with('success', 'Data berhasil ditambahkan!');
     }
