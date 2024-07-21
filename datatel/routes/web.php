@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\smaController;
+use App\Http\Controllers\hotelController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -42,7 +43,17 @@ Route::middleware('auth')->group(function () {
         Route::get('show/{id}', 'show')->name('sma.show');
         Route::get('edit/{id}', 'edit')->name('sma.edit');
         Route::put('edit/{id}', 'update')->name('sma.update');
+        Route::delete('destroy/{id}', 'destroy')->name('sma.destroy');
+    });
 
+    Route::controller(hotelController::class)->prefix('hotel')->group(function () {
+        Route::get('', 'index')->name('hotel');
+        Route::get('create', 'create')->name('hotel.create');
+        Route::post('store', 'store')->name('hotel.store');
+        Route::get('show/{id}', 'show')->name('hotel.show');
+        Route::get('edit/{id}', 'edit')->name('hotel.edit');
+        Route::put('edit/{id}', 'update')->name('hotel.update');
+        Route::delete('destroy/{id}', 'destroy')->name('hotel.destroy');
     });
 
     Route::get('/profile', [App\Http\Controllers\AuthController::class, 'profile'])->name('profile');

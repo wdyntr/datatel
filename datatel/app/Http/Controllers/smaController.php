@@ -85,6 +85,10 @@ class smaController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $sma = Sma::findOrFail($id);
+  
+        $sma->delete();
+  
+        return redirect()->route('sma')->with('success', 'Data berhasil di hapus');
     }
 }

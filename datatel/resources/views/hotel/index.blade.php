@@ -2,8 +2,8 @@
 
 @section('contents')
 <div class="d-flex align-items-center justify-content-between">
-    <h1 class="mb-0">List Data SMA/SMK</h1>
-    <a href="{{ route('sma.create') }}" class="btn btn-primary">Add data</a>
+    <h1 class="mb-0">List Data Hotel</h1>
+    <a href="{{ route('hotel.create') }}" class="btn btn-primary">Add data</a>
 </div>
 <hr />
 @if(Session::has('success'))
@@ -15,31 +15,33 @@
     <thead class="table-primary">
         <tr>
             <th>#</th>
-            <th>Nama</th>
+            <th>Nama Akomodasi</th>
+            <th>Klasifikasi</th>
             <th>Alamat</th>
-            <th>Status</th>
-            <th>Jumlah Siswa</th>
-            <th>Kecamatan</th>
-            <th>Kabupaten/Kota</th>
+            <th>No Telp</th>
+            <th>Jumlah Kamar</th>
+            <th>Jumlah Tempat Tidur</th>
+            <th>Kabupaten</th>
             <th>Action</th>
         </tr>
     </thead>
     <tbody>
-        @if($sma->count() > 0)
-            @foreach($sma as $rs)
+        @if($hotel->count() > 0)
+            @foreach($hotel as $rs)
                 <tr>
                     <td class="align-middle">{{ $loop->iteration }}</td>
-                    <td class="align-middle">{{ $rs->nama }}</td>
+                    <td class="align-middle">{{ $rs->nama_akomodasi }}</td>
+                    <td class="align-middle">{{ $rs->klasifikasi }}</td>
                     <td class="align-middle">{{ $rs->alamat }}</td>
-                    <td class="align-middle">{{ $rs->status }}</td>
-                    <td class="align-middle">{{ $rs->jumlah_siswa }}</td>
-                    <td class="align-middle">{{ $rs->kecamatan }}</td>
-                    <td class="align-middle">{{ $rs->{'kabupaten/kota'} }}</td>
+                    <td class="align-middle">{{ $rs->no_telp }}</td>
+                    <td class="align-middle">{{ $rs->jumlah_kamar }}</td>
+                    <td class="align-middle">{{ $rs->jumlah_tempat_tidur }}</td>
+                    <td class="align-middle">{{ $rs->kabupaten }}</td>
                     <td class="align-middle">
                         <div class="btn-group" role="group" aria-label="Basic example">
-                            <a href="{{ route('sma.show', $rs->id) }}" type="button" class="btn btn-secondary">Detail</a>
-                            <a href="{{ route('sma.edit', $rs->id)}}" type="button" class="btn btn-warning">Edit</a>
-                            <form action="{{ route('sma.destroy', $rs->id) }}" method="POST" type="button"
+                            <a href="{{ route('hotel.show', $rs->id) }}" type="button" class="btn btn-secondary">Detail</a>
+                            <a href="{{ route('hotel.edit', $rs->id)}}" type="button" class="btn btn-warning">Edit</a>
+                            <form action="{{ route('hotel.destroy', $rs->id) }}" method="POST" type="button"
                                 class="btn btn-danger p-0" onsubmit="return confirm('Delete?')">
                                 @csrf
                                 @method('DELETE')

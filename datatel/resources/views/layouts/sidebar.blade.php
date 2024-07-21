@@ -31,6 +31,12 @@
     </li>
 
     <li class="nav-item">
+        <a class="nav-link" href="{{ route('hotel') }}">
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <span>Hotel</span></a>
+    </li>
+
+    <li class="nav-item">
         <a class="nav-link" href="/profile">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Profile</span></a>
