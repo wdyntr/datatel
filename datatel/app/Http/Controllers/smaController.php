@@ -63,7 +63,9 @@ class smaController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $sma = Sma::findOrFail($id);
+  
+        return view('sma.edit', compact('sma'));
     }
 
     /**
@@ -71,7 +73,11 @@ class smaController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $sma = Sma::findOrFail($id);
+  
+        $sma->update($request->all());
+  
+        return redirect()->route('sma')->with('success', 'Data berhasil di update');
     }
 
     /**

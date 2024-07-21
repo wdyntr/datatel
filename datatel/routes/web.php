@@ -40,6 +40,8 @@ Route::middleware('auth')->group(function () {
         Route::get('create', 'create')->name('sma.create');
         Route::post('store', 'store')->name('sma.store');
         Route::get('show/{id}', 'show')->name('sma.show');
+        Route::get('edit/{id}', 'edit')->name('sma.edit');
+        Route::put('edit/{id}', 'update')->name('sma.update');
 
     });
 
