@@ -55,8 +55,13 @@
     </div>
     <div class="row mb-3">
         <div class="col">
-            <input type="text" name="status_berlangganan" class="form-control" placeholder="Status Berlangganan">
+            <select class="form-control" name="status_berlangganan">
+                <option value="">-- Pilih Status Berlangganan --</option>
+                <option value="Aktif">Aktif</option>
+                <option value="Tidak AKtif">Tidak AKtif</option>
+            </select>
         </div>
+
         <div class="col">
             <input type="text" name="jenis_layanan" class="form-control" placeholder="Jenis Layanan">
         </div>

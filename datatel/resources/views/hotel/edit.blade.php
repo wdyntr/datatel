@@ -78,8 +78,13 @@
     <div class="row">
         <div class="col mb-3">
             <label class="form-label">Status Berlangganan</label>
-            <input type="text" name="status_berlangganan" class="form-control" placeholder="Status Berlangganan"
-                value="{{ $hotel->status_berlangganan }}">
+            <select class="form-control" name="status_berlangganan">
+                <option value="">-- Pilih Status Berlangganan --</option>
+                <option value="Aktif" {{ $hotel->status_berlangganan == 'Aktif' ? 'selected' : '' }}>Aktif</option>
+                <option value="Tidka Aktif" {{ $hotel->status_berlangganan == 'Tidak Aktif' ? 'selected' : '' }}>Tidak
+                    Aktif
+                </option>
+            </select>
         </div>
         <div class="col mb-3">
             <label class="form-label">Jenis Layanan</label>

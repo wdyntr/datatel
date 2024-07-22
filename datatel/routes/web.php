@@ -5,6 +5,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\smaController;
 use App\Http\Controllers\hotelController;
+use App\Http\Controllers\univController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -55,6 +56,17 @@ Route::middleware('auth')->group(function () {
         Route::put('edit/{id}', 'update')->name('hotel.update');
         Route::delete('destroy/{id}', 'destroy')->name('hotel.destroy');
     });
+
+    Route::controller(univController::class)->prefix('univ')->group(function () {
+        Route::get('', 'index')->name('univ');
+        Route::get('create', 'create')->name('univ.create');
+        Route::post('store', 'store')->name('univ.store');
+        Route::get('show/{id}', 'show')->name('univ.show');
+        Route::get('edit/{id}', 'edit')->name('univ.edit');
+        Route::put('edit/{id}', 'update')->name('univ.update');
+        Route::delete('destroy/{id}', 'destroy')->name('univ.destroy');
+    });
+
 
     Route::get('/profile', [App\Http\Controllers\AuthController::class, 'profile'])->name('profile');
 
