@@ -10,9 +10,9 @@ return new class extends Migration {
      */
     public function up(): void
     {
-        Schema::create('univ', function (Blueprint $table) {
+        Schema::create('bank', function (Blueprint $table) {
             $table->id();
-            $table->string("nama_univ")->nullable();
+            $table->string("nama_bank")->nullable();
             $table->string("status")->nullable();
             $table->string("alamat")->nullable();
             $table->string("kecamatan")->nullable();
@@ -28,6 +28,6 @@ return new class extends Migration {
      */
     public function down(): void
     {
-        Schema::dropIfExists('univ');
+        Schema::dropIfExists('bank');
     }
 };

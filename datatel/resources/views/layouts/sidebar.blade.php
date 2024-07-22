@@ -43,6 +43,12 @@
     </li>
 
     <li class="nav-item">
+        <a class="nav-link" href="{{ route('bank') }}">
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <span>List Bank</span></a>
+    </li>
+
+    <li class="nav-item">
         <a class="nav-link" href="/profile">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Profile</span></a>
