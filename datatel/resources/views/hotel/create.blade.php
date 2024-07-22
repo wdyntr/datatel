@@ -7,31 +7,58 @@
     @csrf
     <div class="row mb-3">
         <div class="col">
-            <input type="text" name="nama_akomodasi" class="form-control" placeholder="Nama Akomodasi">
+            <input type="text" name="kategori" class="form-control" placeholder="Kategori">
         </div>
         <div class="col">
-            <input type="text" name="klasifikasi" class="form-control" placeholder="Klasifikasi">
+            <input type="text" name="nama_pelanggan" class="form-control" placeholder="Nama Pelanggan">
         </div>
     </div>
     <div class="row mb-3">
+        <div class="col">
+            <input type="text" name="nama_am" class="form-control" placeholder="Nama AM">
+        </div>
         <div class="col">
             <input type="text" name="alamat" class="form-control" placeholder="Alamat">
         </div>
-        <div class="col">
-            <input type="text" name="no_telp" class="form-control" placeholder="No Telp">
-        </div>
     </div>
     <div class="row mb-3">
         <div class="col">
-            <input type="text" name="jumlah_kamar" class="form-control" placeholder="Jumlah Kamar">
+            <input type="text" name="kecamatan" class="form-control" placeholder="Kecamatan">
         </div>
-        <div class="col">
-            <input type="text" name="jumlah_tempat_tidur" class="form-control" placeholder="Jumlah Tempat Tidur">
-        </div>
-    </div>
-    <div class="row mb-3">
         <div class="col">
             <input type="text" name="kabupaten" class="form-control" placeholder="Kabupaten">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col">
+            <input type="text" name="provinsi" class="form-control" placeholder="Provinsi">
+        </div>
+        <div class="col">
+            <input type="text" name="pelayanan" class="form-control" placeholder="Pelayanan">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col">
+            <input type="text" name="koordinat" class="form-control" placeholder="Koordinat">
+        </div>
+        <div class="col">
+            <input type="email" name="email_pic" class="form-control" placeholder="Email PIC">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col">
+            <input type="text" name="sosmed_pic" class="form-control" placeholder="Sosmed PIC">
+        </div>
+        <div class="col">
+            <input type="text" name="tersedia_layanan" class="form-control" placeholder="Tersedia Layanan">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col">
+            <input type="text" name="status_berlangganan" class="form-control" placeholder="Status Berlangganan">
+        </div>
+        <div class="col">
+            <input type="text" name="jenis_layanan" class="form-control" placeholder="Jenis Layanan">
         </div>
     </div>
 

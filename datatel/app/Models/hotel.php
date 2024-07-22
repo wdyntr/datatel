@@ -12,12 +12,19 @@ class hotel extends Model
     use HasFactory;
 
     protected $fillable = [
-        'nama_akomodasi',
-        'klasifikasi',
+        'kategori',
+        'nama_pelanggan',
+        'nama_am',
         'alamat',
-        'no_telp',
-        'jumlah_kamar',
-        'jumlah_tempat_tidur',
+        'kecamatan',
         'kabupaten',
+        'provinsi',
+        'pelayanan',
+        'koordinat',
+        'email_pic',
+        'sosmed_pic',
+        'tersedia_layanan',
+        'status_berlangganan',
+        'jenis_layanan',
     ];
 }

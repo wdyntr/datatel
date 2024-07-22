@@ -31,13 +31,20 @@ class hotelController extends Controller
     public function store(Request $request)
     {
         $data = $request->validate([
-            'nama_akomodasi' => 'nullable|string',
-            'klasifikasi' => 'nullable|string',
+            'kategori' => 'nullable|string',
+            'nama_pelanggan' => 'nullable|string',
+            'nama_am' => 'nullable|string',
             'alamat' => 'nullable|string',
-            'no_telp' => 'nullable|string',
-            'jumlah_kamar' => 'nullable|integer',
-            'jumlah_tempat_tidur' => 'nullable|string',
+            'kecamatan' => 'nullable|string',
             'kabupaten' => 'nullable|string',
+            'provinsi' => 'nullable|string',
+            'pelayanan' => 'nullable|string',
+            'koordinat' => 'nullable|string',
+            'email_pic' => 'nullable|string',
+            'sosmed_pic' => 'nullable|string',
+            'tersedia_layanan' => 'nullable|string',
+            'status_berlangganan' => 'nullable|string',
+            'jenis_layanan' => 'nullable|string',
         ]);
 
         hotel::create($data);
@@ -51,7 +58,7 @@ class hotelController extends Controller
     public function show(string $id)
     {
         $hotel = hotel::findOrFail($id);
-  
+
         return view('hotel.show', compact('hotel'));
     }
 
@@ -61,7 +68,7 @@ class hotelController extends Controller
     public function edit(string $id)
     {
         $hotel = hotel::findOrFail($id);
-  
+
         return view('hotel.edit', compact('hotel'));
     }
 
@@ -71,9 +78,9 @@ class hotelController extends Controller
     public function update(Request $request, string $id)
     {
         $hotel = hotel::findOrFail($id);
-  
+
         $hotel->update($request->all());
-  
+
         return redirect()->route('hotel')->with('success', 'Data berhasil di update');
     }
 
@@ -83,9 +90,9 @@ class hotelController extends Controller
     public function destroy(string $id)
     {
         $hotel = hotel::findOrFail($id);
-  
+
         $hotel->delete();
-  
+
         return redirect()->route('hotel')->with('success', 'Data berhasil di hapus');
     }
 }

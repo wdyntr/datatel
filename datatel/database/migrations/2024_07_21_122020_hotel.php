@@ -4,8 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
-{
+return new class extends Migration {
     /**
      * Run the migrations.
      */
@@ -13,13 +12,20 @@ return new class extends Migration
     {
         Schema::create('hotel', function (Blueprint $table) {
             $table->id();
-            $table->string("nama_akomodasi")->nullable();
-            $table->string("klasifikasi")->nullable();
+            $table->string("kategori")->nullable();
+            $table->string("nama_pelanggan")->nullable();
+            $table->string("nama_am")->nullable();
             $table->string("alamat")->nullable();
-            $table->bigInteger("no_telp")->nullable();
-            $table->bigInteger("jumlah_kamar")->nullable();
-            $table->bigInteger("jumlah_tempat_tidur")->nullable();
+            $table->string("kecamatan")->nullable();
             $table->string("kabupaten")->nullable();
+            $table->string("provinsi")->nullable();
+            $table->string("pelayanan")->nullable();
+            $table->string("koordinat")->nullable();
+            $table->string("email_pic")->nullable();
+            $table->string("sosmed_pic")->nullable();
+            $table->string("tersedia_layanan")->nullable();
+            $table->string("status_berlangganan")->nullable();
+            $table->string("jenis_layanan")->nullable();
             $table->timestamps();
         });
     }

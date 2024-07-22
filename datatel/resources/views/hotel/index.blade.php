@@ -15,13 +15,13 @@
     <thead class="table-primary">
         <tr>
             <th>#</th>
-            <th>Nama Akomodasi</th>
-            <th>Klasifikasi</th>
+            <th>Kategori</th>
+            <th>Nama Pelanggan</th>
+            <th>Nama AM</th>
             <th>Alamat</th>
-            <th>No Telp</th>
-            <th>Jumlah Kamar</th>
-            <th>Jumlah Tempat Tidur</th>
+            <th>Kecamatan</th>
             <th>Kabupaten</th>
+            <th>Provinsi</th>
             <th>Action</th>
         </tr>
     </thead>
@@ -30,13 +30,13 @@
             @foreach($hotel as $rs)
                 <tr>
                     <td class="align-middle">{{ $loop->iteration }}</td>
-                    <td class="align-middle">{{ $rs->nama_akomodasi }}</td>
-                    <td class="align-middle">{{ $rs->klasifikasi }}</td>
+                    <td class="align-middle">{{ $rs->kategori }}</td>
+                    <td class="align-middle">{{ $rs->nama_pelanggan }}</td>
+                    <td class="align-middle">{{ $rs->nama_am }}</td>
                     <td class="align-middle">{{ $rs->alamat }}</td>
-                    <td class="align-middle">{{ $rs->no_telp }}</td>
-                    <td class="align-middle">{{ $rs->jumlah_kamar }}</td>
-                    <td class="align-middle">{{ $rs->jumlah_tempat_tidur }}</td>
+                    <td class="align-middle">{{ $rs->kecamatan }}</td>
                     <td class="align-middle">{{ $rs->kabupaten }}</td>
+                    <td class="align-middle">{{ $rs->provinsi }}</td>
                     <td class="align-middle">
                         <div class="btn-group" role="group" aria-label="Basic example">
                             <a href="{{ route('hotel.show', $rs->id) }}" type="button" class="btn btn-secondary">Detail</a>
