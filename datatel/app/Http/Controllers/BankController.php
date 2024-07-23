@@ -23,7 +23,7 @@ class BankController extends Controller
      */
     public function create()
     {
-        //
+        return view('bank.create');
     }
 
     /**
@@ -31,7 +31,18 @@ class BankController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->validate([
+            'nama_bank' => 'nullable|string',
+            'alamat' => 'nullable|string',
+            'kecamatan' => 'nullable|string',
+            'kabupaten/kota' => 'nullable|string',
+            'am' => 'nullable|string',
+            'layanan_telkom' => 'nullable|string',
+        ]);
+
+        Bank::create($data);
+
+        return redirect()->route('bank')->with('success', 'Data berhasil ditambahkan!');
     }
 
     /**
@@ -39,7 +50,9 @@ class BankController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $bank = Bank::findOrFail($id);
+
+        return view('bank.show', compact('bank'));
     }
 
     /**
@@ -47,7 +60,9 @@ class BankController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $bank = Bank::findOrFail($id);
+
+        return view('bank.edit', compact('bank'));
     }
 
     /**
@@ -55,7 +70,11 @@ class BankController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $bank = Bank::findOrFail($id);
+
+        $bank->update($request->all());
+
+        return redirect()->route('bank')->with('success', 'Data berhasil di update');
     }
 
     /**
@@ -63,6 +82,10 @@ class BankController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $bank = Bank::findOrFail($id);
+
+        $bank->delete();
+
+        return redirect()->route('bank')->with('success', 'Data berhasil di hapus');
     }
 }

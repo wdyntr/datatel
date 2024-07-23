@@ -13,10 +13,9 @@ return new class extends Migration {
         Schema::create('bank', function (Blueprint $table) {
             $table->id();
             $table->string("nama_bank")->nullable();
-            $table->string("status")->nullable();
             $table->string("alamat")->nullable();
             $table->string("kecamatan")->nullable();
-            $table->string("kabupaten")->nullable();
+            $table->string("kabupaten/kota")->nullable();
             $table->string("am")->nullable();
             $table->string("layanan_telkom")->nullable();
             $table->timestamps();

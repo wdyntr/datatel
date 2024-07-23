@@ -7,6 +7,7 @@ use App\Http\Controllers\smaController;
 use App\Http\Controllers\hotelController;
 use App\Http\Controllers\univController;
 use App\Http\Controllers\BankController;
+use App\Http\Controllers\faskesController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -76,6 +77,16 @@ Route::middleware('auth')->group(function () {
         Route::get('edit/{id}', 'edit')->name('bank.edit');
         Route::put('edit/{id}', 'update')->name('bank.update');
         Route::delete('destroy/{id}', 'destroy')->name('bank.destroy');
+    });
+
+    Route::controller(faskesController::class)->prefix('faskes')->group(function () {
+        Route::get('', 'index')->name('faskes');
+        Route::get('create', 'create')->name('faskes.create');
+        Route::post('store', 'store')->name('faskes.store');
+        Route::get('show/{id}', 'show')->name('faskes.show');
+        Route::get('edit/{id}', 'edit')->name('faskes.edit');
+        Route::put('edit/{id}', 'update')->name('faskes.update');
+        Route::delete('destroy/{id}', 'destroy')->name('faskes.destroy');
     });
 
     Route::get('/profile', [App\Http\Controllers\AuthController::class, 'profile'])->name('profile');
