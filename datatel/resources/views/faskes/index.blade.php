@@ -2,8 +2,8 @@
 
 @section('contents')
 <div class="d-flex align-items-center justify-content-between">
-    <h1 class="mb-0">List Data Bank</h1>
-    <a href="{{ route('bank.create') }}" class="btn btn-primary">Add data</a>
+    <h1 class="mb-0">List Data Puskesmas</h1>
+    <a href="{{ route('faskes.create') }}" class="btn btn-primary">Add data</a>
 </div>
 <hr />
 @if(Session::has('success'))
@@ -15,31 +15,33 @@
     <thead class="table-primary">
         <tr>
             <th>#</th>
-            <th>Nama Bank</th>
+            <th>Kode Puskesmas</th>
+            <th>Nama Puskesmas</th>
+            <th>Treg</th>
+            <th>Witel</th>
             <th>Alamat</th>
             <th>Kecamatan</th>
-            <th>Kebupaten/Kota</th>
-            <th>AM</th>
-            <th>Layanan Telkom</th>
+            <th>Kabupaten</th>
             <th>Action</th>
         </tr>
     </thead>
     <tbody>
-        @if($bank->count() > 0)
-            @foreach($bank as $rs)
+        @if($faskes->count() > 0)
+            @foreach($faskes as $rs)
                 <tr>
                     <td class="align-middle">{{ $loop->iteration }}</td>
-                    <td class="align-middle">{{ $rs->nama_bank }}</td>
+                    <td class="align-middle">{{ $rs->kode_puskesmas }}</td>
+                    <td class="align-middle">{{ $rs->nama_puskes }}</td>
+                    <td class="align-middle">{{ $rs->treg }}</td>
+                    <td class="align-middle">{{ $rs->witel }}</td>
                     <td class="align-middle">{{ $rs->alamat }}</td>
                     <td class="align-middle">{{ $rs->kecamatan }}</td>
-                    <td class="align-middle">{{ $rs->{'kabupaten/kota'} }}</td>
-                    <td class="align-middle">{{ $rs->am }}</td>
-                    <td class="align-middle">{{ $rs->layanan_telkom }}</td>
+                    <td class="align-middle">{{ $rs->kabupaten }}</td>
                     <td class="align-middle">
                         <div class="btn-group" role="group" aria-label="Basic example">
-                            <a href="{{ route('bank.show', $rs->id) }}" type="button" class="btn btn-secondary">Detail</a>
-                            <a href="{{ route('bank.edit', $rs->id)}}" type="button" class="btn btn-warning">Edit</a>
-                            <form action="{{ route('bank.destroy', $rs->id) }}" method="POST" type="button"
+                            <a href="{{ route('faskes.show', $rs->id) }}" type="button" class="btn btn-secondary">Detail</a>
+                            <a href="{{ route('faskes.edit', $rs->id)}}" type="button" class="btn btn-warning">Edit</a>
+                            <form action="{{ route('faskes.destroy', $rs->id) }}" method="POST" type="button"
                                 class="btn btn-danger p-0" onsubmit="return confirm('Delete?')">
                                 @csrf
                                 @method('DELETE')
