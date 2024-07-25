@@ -62,7 +62,9 @@ class faskesController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $faskes = faskes::findOrFail($id);
+
+        return view('faskes.show', compact('faskes'));
     }
 
     /**
@@ -70,7 +72,9 @@ class faskesController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $faskes = faskes::findOrFail($id);
+
+        return view('faskes.edit', compact('faskes'));
     }
 
     /**
@@ -78,7 +82,11 @@ class faskesController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $faskes = faskes::findOrFail($id);
+
+        $faskes->update($request->all());
+
+        return redirect()->route('faskes')->with('success', 'Data berhasil di update');
     }
 
     /**
@@ -86,6 +94,10 @@ class faskesController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $faskes = faskes::findOrFail($id);
+
+        $faskes->delete();
+
+        return redirect()->route('faskes')->with('success', 'Data berhasil di hapus');
     }
 }
