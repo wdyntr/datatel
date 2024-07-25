@@ -8,6 +8,7 @@ use App\Http\Controllers\hotelController;
 use App\Http\Controllers\univController;
 use App\Http\Controllers\BankController;
 use App\Http\Controllers\faskesController;
+use App\Http\Controllers\cafeController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -87,6 +88,16 @@ Route::middleware('auth')->group(function () {
         Route::get('edit/{id}', 'edit')->name('faskes.edit');
         Route::put('edit/{id}', 'update')->name('faskes.update');
         Route::delete('destroy/{id}', 'destroy')->name('faskes.destroy');
+    });
+
+    Route::controller(cafeController::class)->prefix('cafe')->group(function () {
+        Route::get('', 'index')->name('cafe');
+        Route::get('create', 'create')->name('cafe.create');
+        Route::post('store', 'store')->name('cafe.store');
+        Route::get('show/{id}', 'show')->name('cafe.show');
+        Route::get('edit/{id}', 'edit')->name('cafe.edit');
+        Route::put('edit/{id}', 'update')->name('cafe.update');
+        Route::delete('destroy/{id}', 'destroy')->name('cafe.destroy');
     });
 
     Route::get('/profile', [App\Http\Controllers\AuthController::class, 'profile'])->name('profile');
