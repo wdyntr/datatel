@@ -9,6 +9,7 @@ use App\Http\Controllers\univController;
 use App\Http\Controllers\BankController;
 use App\Http\Controllers\faskesController;
 use App\Http\Controllers\cafeController;
+use App\Http\Controllers\wisata_lamselController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -29,6 +30,10 @@ Route::middleware('auth')->group(function () {
     Route::get('dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+
+    // routes/web.php
+    Route::get('/search', [App\Http\Controllers\SearchController::class, 'index'])->name('search');
+
 
     Route::controller(ProductController::class)->prefix('dataPelanggan')->group(function () {
         Route::get('', 'index')->name('dataPelanggan');
@@ -98,6 +103,16 @@ Route::middleware('auth')->group(function () {
         Route::get('edit/{id}', 'edit')->name('cafe.edit');
         Route::put('edit/{id}', 'update')->name('cafe.update');
         Route::delete('destroy/{id}', 'destroy')->name('cafe.destroy');
+    });
+
+    Route::controller(wisata_lamselController::class)->prefix('wisata_lamsel')->group(function () {
+        Route::get('', 'index')->name('wisata_lamsel');
+        Route::get('create', 'create')->name('wisata_lamsel.create');
+        Route::post('store', 'store')->name('wisata_lamsel.store');
+        Route::get('show/{id}', 'show')->name('wisata_lamsel.show');
+        Route::get('edit/{id}', 'edit')->name('wisata_lamsel.edit');
+        Route::put('edit/{id}', 'update')->name('wisata_lamsel.update');
+        Route::delete('destroy/{id}', 'destroy')->name('wisata_lamsel.destroy');
     });
 
     Route::get('/profile', [App\Http\Controllers\AuthController::class, 'profile'])->name('profile');
