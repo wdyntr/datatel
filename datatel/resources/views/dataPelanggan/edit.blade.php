@@ -3,7 +3,7 @@
 @section('contents')
     <h1 class="mb-0">Edit Data</h1>
     <hr />
-    <form action="{{ route('dataPelanggan.update', $product->id) }}" method="POST">
+    <form action="{{ route('datapelanggan.update', $product->id) }}" method="POST">
         @csrf
         @method('PUT')
         <div class="row">

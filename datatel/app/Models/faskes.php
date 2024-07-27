@@ -32,4 +32,9 @@ class faskes extends Model
         'kompetitor_eksisting',
         'rekomendasi',
     ];
+
+    public function getDisplayNameAttribute()
+    {
+        return $this->nama_puskes;
+    }
 }

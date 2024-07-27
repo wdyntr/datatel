@@ -20,4 +20,9 @@ class Product extends Model
         'nipnas',
         'nama_grup',
     ];
+
+    public function getDisplayNameAttribute()
+    {
+        return $this->nama_akun;
+    }
 }

@@ -23,4 +23,9 @@ class Sma extends Model
         'odp',
         'layanan_telkom',
     ];
+
+    public function getDisplayNameAttribute()
+    {
+        return $this->nama;
+    }
 }

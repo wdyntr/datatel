@@ -1,16 +1,15 @@
 <?php
 
-// app/Http/Controllers/SearchController.php
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\bank;
-use App\Models\cafe;
-use App\Models\faskes;
+use App\Models\Bank;
+use App\Models\Cafe;
+use App\Models\Faskes;
 use App\Models\hotel;
 use App\Models\Product;
 use App\Models\Sma;
-use App\Models\univ;
+use App\Models\Univ;
 use App\Models\wisata_lamsel;
 
 class SearchController extends Controller
@@ -20,64 +19,65 @@ class SearchController extends Controller
         $query = $request->input('query');
 
         // Pencarian di semua model dengan atribut yang berbeda
-        $smas = Sma::where('name', 'LIKE', "%{$query}%")
-            ->orWhere('address', 'LIKE', "%{$query}%")
+        $smas = Sma::where('nama', 'LIKE', "%{$query}%")
             ->get()
             ->map(function ($item) {
                 $item->type = 'Sma';
                 return $item;
             });
 
-        $dataPelanggans = DataPelanggan::where('name', 'LIKE', "%{$query}%")
-            ->orWhere('email', 'LIKE', "%{$query}%")
+        $dataPelanggans = Product::where('nama_akun', 'LIKE', "%{$query}%")
             ->get()
             ->map(function ($item) {
-                $item->type = 'DataPelanggan';
+                $item->type = 'datapelanggan';
                 return $item;
             });
 
-        $hotels = Hotel::where('name', 'LIKE', "%{$query}%")
-            ->orWhere('location', 'LIKE', "%{$query}%")
+        $hotels = hotel::where('nama_pelanggan', 'LIKE', "%{$query}%")
             ->get()
             ->map(function ($item) {
                 $item->type = 'Hotel';
                 return $item;
             });
 
-        $banks = Bank::where('name', 'LIKE', "%{$query}%")
-            ->orWhere('branch', 'LIKE', "%{$query}%")
+        $banks = Bank::where('nama_bank', 'LIKE', "%{$query}%")
             ->get()
             ->map(function ($item) {
                 $item->type = 'Bank';
                 return $item;
             });
 
-        $cafes = Cafe::where('name', 'LIKE', "%{$query}%")
-            ->orWhere('menu', 'LIKE', "%{$query}%")
+        $cafes = Cafe::where('nama', 'LIKE', "%{$query}%")
             ->get()
             ->map(function ($item) {
                 $item->type = 'Cafe';
                 return $item;
             });
 
-        $universitas = Universitas::where('name', 'LIKE', "%{$query}%")
-            ->orWhere('faculty', 'LIKE', "%{$query}%")
+        $universitas = Univ::where('nama_univ', 'LIKE', "%{$query}%")
             ->get()
             ->map(function ($item) {
                 $item->type = 'Universitas';
                 return $item;
             });
 
-        // Gabungkan semua hasil
-        $results = collect();
-        $results = $results->merge($smas);
-        $results = $results->merge($dataPelanggans);
-        $results = $results->merge($hotels);
-        $results = $results->merge($banks);
-        $results = $results->merge($cafes);
-        $results = $results->merge($universitas);
+        $wisataLamsel = wisata_lamsel::where('nama', 'LIKE', "%{$query}%")
+            ->get()
+            ->map(function ($item) {
+                $item->type = 'WisataLamsel';
+                return $item;
+            });
 
-        return view('search.results', ['results' => $results, 'query' => $query]);
+        // Gabungkan semua hasil
+        $results = collect()
+            ->merge($smas)
+            ->merge($dataPelanggans)
+            ->merge($hotels)
+            ->merge($banks)
+            ->merge($cafes)
+            ->merge($universitas)
+            ->merge($wisataLamsel);
+
+        return view('search.index', ['results' => $results, 'query' => $query]);
     }
 }
-

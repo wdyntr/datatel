@@ -3,7 +3,7 @@
 @section('contents')
 <div class="d-flex align-items-center justify-content-between">
     <h1 class="mb-0">List Data Pelanggan</h1>
-    <a href="{{ route('dataPelanggan.create') }}" class="btn btn-primary">Add data</a>
+    <a href="{{ route('datapelanggan.create') }}" class="btn btn-primary">Add data</a>
 </div>
 <hr />
 @if(Session::has('success'))
@@ -39,9 +39,9 @@
                     <td class="align-middle">{{ $rs->nama_grup }}</td>
                     <td class="align-middle">
                         <div class="btn-group" role="group" aria-label="Basic example">
-                            <a href="{{ route('dataPelanggan.show', $rs->id) }}" type="button" class="btn btn-secondary">Detail</a>
-                            <a href="{{ route('dataPelanggan.edit', $rs->id)}}" type="button" class="btn btn-warning">Edit</a>
-                            <form action="{{ route('dataPelanggan.destroy', $rs->id) }}" method="POST" type="button"
+                            <a href="{{ route('datapelanggan.show', $rs->id) }}" type="button" class="btn btn-secondary">Detail</a>
+                            <a href="{{ route('datapelanggan.edit', $rs->id)}}" type="button" class="btn btn-warning">Edit</a>
+                            <form action="{{ route('datapelanggan.destroy', $rs->id) }}" method="POST" type="button"
                                 class="btn btn-danger p-0" onsubmit="return confirm('Delete?')">
                                 @csrf
                                 @method('DELETE')

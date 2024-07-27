@@ -19,4 +19,9 @@ class wisata_lamsel extends Model
         'email_sosmed',
         'jenis_layanan',
     ];
+
+    public function getDisplayNameAttribute()
+    {
+        return $this->nama;
+    }
 }

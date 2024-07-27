@@ -27,4 +27,9 @@ class hotel extends Model
         'status_berlangganan',
         'jenis_layanan',
     ];
+
+    public function getDisplayNameAttribute()
+    {
+        return $this->nama_pelanggan;
+    }
 }

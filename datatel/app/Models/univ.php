@@ -20,4 +20,9 @@ class univ extends Model
         'am',
         'layanan_telkom',
     ];
+
+    public function getDisplayNameAttribute()
+    {
+        return $this->nama_univ;
+    }
 }

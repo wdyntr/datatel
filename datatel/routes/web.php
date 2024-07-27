@@ -32,17 +32,17 @@ Route::middleware('auth')->group(function () {
     })->name('dashboard');
 
     // routes/web.php
-    Route::get('/search', [App\Http\Controllers\SearchController::class, 'index'])->name('search');
+    Route::get('/search', [App\Http\Controllers\SearchController::class, 'index'])->name('search.index');
 
 
-    Route::controller(ProductController::class)->prefix('dataPelanggan')->group(function () {
-        Route::get('', 'index')->name('dataPelanggan');
-        Route::get('create', 'create')->name('dataPelanggan.create');
-        Route::post('store', 'store')->name('dataPelanggan.store');
-        Route::get('show/{id}', 'show')->name('dataPelanggan.show');
-        Route::get('edit/{id}', 'edit')->name('dataPelanggan.edit');
-        Route::put('edit/{id}', 'update')->name('dataPelanggan.update');
-        Route::delete('destroy/{id}', 'destroy')->name('dataPelanggan.destroy');
+    Route::controller(ProductController::class)->prefix('datapelanggan')->group(function () {
+        Route::get('', 'index')->name('datapelanggan');
+        Route::get('create', 'create')->name('datapelanggan.create');
+        Route::post('store', 'store')->name('datapelanggan.store');
+        Route::get('show/{id}', 'show')->name('datapelanggan.show');
+        Route::get('edit/{id}', 'edit')->name('datapelanggan.edit');
+        Route::put('edit/{id}', 'update')->name('datapelanggan.update');
+        Route::delete('destroy/{id}', 'destroy')->name('datapelanggan.destroy');
     });
 
     Route::controller(smaController::class)->prefix('sma')->group(function () {

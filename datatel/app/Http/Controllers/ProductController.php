@@ -14,7 +14,7 @@ class ProductController extends Controller
     {
         $product = Product::orderBy('created_at', 'DESC')->get();
 
-        return view('dataPelanggan.index', compact('product'));
+        return view('datapelanggan.index', compact('product'));
     }
 
     /**
@@ -22,7 +22,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view('dataPelanggan.create');
+        return view('datapelanggan.create');
     }
 
     /**
@@ -42,7 +42,7 @@ class ProductController extends Controller
 
         Product::create($data);
 
-        return redirect()->route('dataPelanggan')->with('success', 'Data berhasil ditambahkan!');
+        return redirect()->route('datapelanggan')->with('success', 'Data berhasil ditambahkan!');
     }
 
     /**
@@ -52,7 +52,7 @@ class ProductController extends Controller
     {
         $product = Product::findOrFail($id);
   
-        return view('dataPelanggan.show', compact('product'));
+        return view('datapelanggan.show', compact('product'));
     }
 
     /**
@@ -62,7 +62,7 @@ class ProductController extends Controller
     {
         $product = Product::findOrFail($id);
   
-        return view('dataPelanggan.edit', compact('product'));
+        return view('datapelanggan.edit', compact('product'));
     }
 
     /**
@@ -74,7 +74,7 @@ class ProductController extends Controller
   
         $product->update($request->all());
   
-        return redirect()->route('dataPelanggan')->with('success', 'Data berhasil di update');
+        return redirect()->route('datapelanggan')->with('success', 'Data berhasil di update');
     }
 
     /**
@@ -86,6 +86,6 @@ class ProductController extends Controller
   
         $product->delete();
   
-        return redirect()->route('dataPelanggan')->with('success', 'Data berhasil di hapus');
+        return redirect()->route('datapelanggan')->with('success', 'Data berhasil di hapus');
     }
 }
