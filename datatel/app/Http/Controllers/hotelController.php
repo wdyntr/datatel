@@ -41,10 +41,13 @@ class hotelController extends Controller
             'pelayanan' => 'nullable|string',
             'koordinat' => 'nullable|string',
             'email_pic' => 'nullable|string',
+            'no_hp' => 'nullable|integer',
             'sosmed_pic' => 'nullable|string',
             'tersedia_layanan' => 'nullable|string',
             'status_berlangganan' => 'nullable|string',
             'jenis_layanan' => 'nullable|string',
+        ], [
+            'no_hp.integer' => 'No HP harus berupa bilangan bulat.',
         ]);
 
         hotel::create($data);
@@ -77,9 +80,29 @@ class hotelController extends Controller
      */
     public function update(Request $request, string $id)
     {
+        $data = $request->validate([
+            'kategori' => 'nullable|string',
+            'nama_pelanggan' => 'nullable|string',
+            'nama_am' => 'nullable|string',
+            'alamat' => 'nullable|string',
+            'kecamatan' => 'nullable|string',
+            'kabupaten' => 'nullable|string',
+            'provinsi' => 'nullable|string',
+            'pelayanan' => 'nullable|string',
+            'koordinat' => 'nullable|string',
+            'email_pic' => 'nullable|string',
+            'no_hp' => 'nullable|integer',
+            'sosmed_pic' => 'nullable|string',
+            'tersedia_layanan' => 'nullable|string',
+            'status_berlangganan' => 'nullable|string',
+            'jenis_layanan' => 'nullable|string',
+        ], [
+            'no_hp.integer' => 'No HP harus berupa bilangan bulat.',
+        ]);
+
         $hotel = hotel::findOrFail($id);
 
-        $hotel->update($request->all());
+        $hotel->update($data);
 
         return redirect()->route('hotel')->with('success', 'Data berhasil di update');
     }

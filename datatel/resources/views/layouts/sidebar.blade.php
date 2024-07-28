@@ -25,7 +25,7 @@
     </li>
 
     <li class="nav-item">
-        <a class="nav-link" href="{{ route('sma') }}">
+        <a class="nav-link" href="{{ route('SMA_SMK') }}">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>SMA</span></a>
     </li>
@@ -37,7 +37,7 @@
     </li>
 
     <li class="nav-item">
-        <a class="nav-link" href="{{ route('univ') }}">
+        <a class="nav-link" href="{{ route('universitas') }}">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>List Universitas</span></a>
     </li>
@@ -64,6 +64,12 @@
         <a class="nav-link" href="{{ route('wisata_lamsel') }}">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>List Wisata LamSel</span></a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link" href="{{ route('wisata_kuliner') }}">
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <span>List Wisata kuliner</span></a>
     </li>
 
     <li class="nav-item">

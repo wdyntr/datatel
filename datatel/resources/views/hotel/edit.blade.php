@@ -3,6 +3,15 @@
 @section('contents')
 <h1 class="mb-0">Edit Hotel</h1>
 <hr />
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
 <form action="{{ route('hotel.update', $hotel->id) }}" method="POST">
     @csrf
     @method('PUT')
@@ -70,18 +79,24 @@
                 value="{{ $hotel->sosmed_pic }}">
         </div>
         <div class="col mb-3">
+            <label class="form-label">No HP PIC</label>
+            <input type="text" name="no_hp" class="form-control" placeholder="No HP PIC"
+                value="{{ $hotel->no_hp }}">
+        </div>
+        
+    </div>
+    <div class="row">
+        <div class="col mb-3">
             <label class="form-label">Tersedia Layanan</label>
             <input type="text" name="tersedia_layanan" class="form-control" placeholder="Tersedia Layanan"
                 value="{{ $hotel->tersedia_layanan }}">
         </div>
-    </div>
-    <div class="row">
         <div class="col mb-3">
             <label class="form-label">Status Berlangganan</label>
             <select class="form-control" name="status_berlangganan">
                 <option value="">-- Pilih Status Berlangganan --</option>
                 <option value="Aktif" {{ $hotel->status_berlangganan == 'Aktif' ? 'selected' : '' }}>Aktif</option>
-                <option value="Tidka Aktif" {{ $hotel->status_berlangganan == 'Tidak Aktif' ? 'selected' : '' }}>Tidak
+                <option value="Tidak Aktif" {{ $hotel->status_berlangganan == 'Tidak Aktif' ? 'selected' : '' }}>Tidak
                     Aktif
                 </option>
             </select>

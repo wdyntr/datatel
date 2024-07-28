@@ -3,7 +3,7 @@
 @section('contents')
 <div class="d-flex align-items-center justify-content-between">
     <h1 class="mb-0">List Data Universitas</h1>
-    <a href="{{ route('univ.create') }}" class="btn btn-primary">Add data</a>
+    <a href="{{ route('universitas.create') }}" class="btn btn-primary">Add data</a>
 </div>
 <hr />
 @if(Session::has('success'))
@@ -39,9 +39,9 @@
                     <td class="align-middle">{{ $rs->layanan_telkom }}</td>
                     <td class="align-middle">
                         <div class="btn-group" role="group" aria-label="Basic example">
-                            <a href="{{ route('univ.show', $rs->id) }}" type="button" class="btn btn-secondary">Detail</a>
-                            <a href="{{ route('univ.edit', $rs->id)}}" type="button" class="btn btn-warning">Edit</a>
-                            <form action="{{ route('univ.destroy', $rs->id) }}" method="POST" type="button"
+                            <a href="{{ route('universitas.show', $rs->id) }}" type="button" class="btn btn-secondary">Detail</a>
+                            <a href="{{ route('universitas.edit', $rs->id)}}" type="button" class="btn btn-warning">Edit</a>
+                            <form action="{{ route('universitas.destroy', $rs->id) }}" method="POST" type="button"
                                 class="btn btn-danger p-0" onsubmit="return confirm('Delete?')">
                                 @csrf
                                 @method('DELETE')

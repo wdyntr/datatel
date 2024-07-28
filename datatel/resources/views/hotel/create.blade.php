@@ -3,6 +3,15 @@
 @section('contents')
 <h1 class="mb-0">Add Data</h1>
 <hr />
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
 <form action="{{ route('hotel.store') }}" method="POST" enctype="multipart/form-data">
     @csrf
     <div class="row mb-3">
@@ -42,7 +51,7 @@
             <input type="text" name="koordinat" class="form-control" placeholder="Koordinat">
         </div>
         <div class="col">
-            <input type="email" name="email_pic" class="form-control" placeholder="Email PIC">
+            <input type="text" name="email_pic" class="form-control" placeholder="Email PIC">
         </div>
     </div>
     <div class="row mb-3">
@@ -50,23 +59,24 @@
             <input type="text" name="sosmed_pic" class="form-control" placeholder="Sosmed PIC">
         </div>
         <div class="col">
-            <input type="text" name="tersedia_layanan" class="form-control" placeholder="Tersedia Layanan">
+            <input type="text" name="no_hp" class="form-control" placeholder="No HP PIC" id="no_hp">
         </div>
     </div>
     <div class="row mb-3">
         <div class="col">
+            <input type="text" name="tersedia_layanan" class="form-control" placeholder="Tersedia Layanan">
+        </div>
+        <div class="col">
             <select class="form-control" name="status_berlangganan">
                 <option value="">-- Pilih Status Berlangganan --</option>
                 <option value="Aktif">Aktif</option>
-                <option value="Tidak AKtif">Tidak AKtif</option>
+                <option value="Tidak Aktif">Tidak AKtif</option>
             </select>
         </div>
-
         <div class="col">
             <input type="text" name="jenis_layanan" class="form-control" placeholder="Jenis Layanan">
         </div>
     </div>
-
     <div class="row">
         <div class="d-grid">
             <button type="submit" class="btn btn-primary">Submit</button>

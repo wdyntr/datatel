@@ -14,7 +14,7 @@ class smaController extends Controller
     {
         $sma = Sma::orderBy('created_at', 'DESC')->get();
 
-        return view('sma.index', compact('sma'));
+        return view('SMA_SMK.index', compact('sma'));
     }
 
     /**
@@ -22,7 +22,7 @@ class smaController extends Controller
      */
     public function create()
     {
-        return view('sma.create');
+        return view('SMA_SMK.create');
     }
 
     /**
@@ -41,11 +41,13 @@ class smaController extends Controller
             'jaringan_optik' => 'nullable|string',
             'odp' => 'nullable|string',
             'layanan_telkom' => 'nullable|string',
+        ], [
+            'jumlah_siswa.integer' => 'Jumlah siswa harus berupa bilangan bulat.',
         ]);
 
         Sma::create($data);
 
-        return redirect()->route('sma')->with('success', 'Data berhasil ditambahkan!');
+        return redirect()->route('SMA_SMK')->with('success', 'Data berhasil ditambahkan!');
     }
 
     /**
@@ -55,7 +57,7 @@ class smaController extends Controller
     {
         $sma = Sma::findOrFail($id);
   
-        return view('sma.show', compact('sma'));
+        return view('SMA_SMK.show', compact('sma'));
     }
 
     /**
@@ -65,7 +67,7 @@ class smaController extends Controller
     {
         $sma = Sma::findOrFail($id);
   
-        return view('sma.edit', compact('sma'));
+        return view('SMA_SMK.edit', compact('sma'));
     }
 
     /**
@@ -73,11 +75,26 @@ class smaController extends Controller
      */
     public function update(Request $request, string $id)
     {
+        $data = $request->validate([
+            'nama' => 'nullable|string',
+            'alamat' => 'nullable|string',
+            'status' => 'nullable|string',
+            'jumlah_siswa' => 'nullable|integer',
+            'kecamatan' => 'nullable|string',
+            'kabupaten/kota' => 'nullable|string',
+            'provinsi' => 'nullable|string',
+            'jaringan_optik' => 'nullable|string',
+            'odp' => 'nullable|string',
+            'layanan_telkom' => 'nullable|string',
+        ], [
+            'jumlah_siswa.integer' => 'Jumlah siswa harus berupa bilangan bulat.',
+        ]);
+
         $sma = Sma::findOrFail($id);
   
-        $sma->update($request->all());
+        $sma->update($data);
   
-        return redirect()->route('sma')->with('success', 'Data berhasil di update');
+        return redirect()->route('SMA_SMK')->with('success', 'Data berhasil di update');
     }
 
     /**
@@ -89,6 +106,6 @@ class smaController extends Controller
   
         $sma->delete();
   
-        return redirect()->route('sma')->with('success', 'Data berhasil di hapus');
+        return redirect()->route('SMA_SMK')->with('success', 'Data berhasil di hapus');
     }
 }

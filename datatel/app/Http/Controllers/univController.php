@@ -42,7 +42,7 @@ class univController extends Controller
 
         univ::create($data);
 
-        return redirect()->route('univ')->with('success', 'Data berhasil ditambahkan!');
+        return redirect()->route('universitas')->with('success', 'Data berhasil ditambahkan!');
     }
 
     /**
@@ -74,7 +74,7 @@ class univController extends Controller
 
         $univ->update($request->all());
 
-        return redirect()->route('univ')->with('success', 'Data berhasil di update');
+        return redirect()->route('universitas')->with('success', 'Data berhasil di update');
     }
 
     /**
@@ -86,6 +86,6 @@ class univController extends Controller
 
         $univ->delete();
 
-        return redirect()->route('univ')->with('success', 'Data berhasil di hapus');
+        return redirect()->route('universitas')->with('success', 'Data berhasil di hapus');
     }
 }

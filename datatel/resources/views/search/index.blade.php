@@ -24,7 +24,7 @@
             @foreach($results as $result)
                 <tr>
                     <td class="align-middle">{{ $loop->iteration }}</td>
-                    <td class="align-middle">{{ $result->type }}</td>
+                    <td class="align-middle">{{ ucfirst(preg_replace('/([a-z])([A-Z])/', '$1 $2', $result->type)) }}</td>
                     <td class="align-middle">{{ $result->display_name }}</td>
                     <td class="align-middle">
                         <div class="btn-group" role="group" aria-label="Basic example">

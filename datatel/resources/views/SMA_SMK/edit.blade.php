@@ -3,7 +3,17 @@
 @section('contents')
 <h1 class="mb-0">Edit Data</h1>
 <hr />
-<form action="{{ route('sma.update', $sma->id) }}" method="POST">
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+
+<form action="{{ route('SMA_SMK.update', $sma->id) }}" method="POST">
     @csrf
     @method('PUT')
     <div class="row">

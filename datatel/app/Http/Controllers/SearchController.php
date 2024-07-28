@@ -11,6 +11,7 @@ use App\Models\Product;
 use App\Models\Sma;
 use App\Models\Univ;
 use App\Models\wisata_lamsel;
+use App\Models\wisataKuliner;
 
 class SearchController extends Controller
 {
@@ -22,7 +23,7 @@ class SearchController extends Controller
         $smas = Sma::where('nama', 'LIKE', "%{$query}%")
             ->get()
             ->map(function ($item) {
-                $item->type = 'Sma';
+                $item->type = 'SMA/SMK';
                 return $item;
             });
 
@@ -47,6 +48,13 @@ class SearchController extends Controller
                 return $item;
             });
 
+        $faskes = Faskes::where('nama_puskes', 'LIKE', "%{$query}%")
+            ->get()
+            ->map(function ($item) {
+                $item->type = 'Faskes';
+                return $item;
+            });
+
         $cafes = Cafe::where('nama', 'LIKE', "%{$query}%")
             ->get()
             ->map(function ($item) {
@@ -64,7 +72,14 @@ class SearchController extends Controller
         $wisataLamsel = wisata_lamsel::where('nama', 'LIKE', "%{$query}%")
             ->get()
             ->map(function ($item) {
-                $item->type = 'WisataLamsel';
+                $item->type = 'wisata_lamsel';
+                return $item;
+            });
+
+        $wisatakuilner = wisataKuliner::where('nama', 'LIKE', "%{$query}%")
+            ->get()
+            ->map(function ($item) {
+                $item->type = 'wisata_kuliner';
                 return $item;
             });
 
@@ -74,9 +89,11 @@ class SearchController extends Controller
             ->merge($dataPelanggans)
             ->merge($hotels)
             ->merge($banks)
+            ->merge($faskes)
             ->merge($cafes)
             ->merge($universitas)
-            ->merge($wisataLamsel);
+            ->merge($wisataLamsel)
+            ->merge($wisatakuilner);
 
         return view('search.index', ['results' => $results, 'query' => $query]);
     }

@@ -22,6 +22,7 @@ class hotel extends Model
         'pelayanan',
         'koordinat',
         'email_pic',
+        'no_hp',
         'sosmed_pic',
         'tersedia_layanan',
         'status_berlangganan',

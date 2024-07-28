@@ -10,6 +10,7 @@ use App\Http\Controllers\BankController;
 use App\Http\Controllers\faskesController;
 use App\Http\Controllers\cafeController;
 use App\Http\Controllers\wisata_lamselController;
+use App\Http\Controllers\wisata_kulinerController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -31,9 +32,7 @@ Route::middleware('auth')->group(function () {
         return view('dashboard');
     })->name('dashboard');
 
-    // routes/web.php
     Route::get('/search', [App\Http\Controllers\SearchController::class, 'index'])->name('search.index');
-
 
     Route::controller(ProductController::class)->prefix('datapelanggan')->group(function () {
         Route::get('', 'index')->name('datapelanggan');
@@ -45,14 +44,14 @@ Route::middleware('auth')->group(function () {
         Route::delete('destroy/{id}', 'destroy')->name('datapelanggan.destroy');
     });
 
-    Route::controller(smaController::class)->prefix('sma')->group(function () {
-        Route::get('', 'index')->name('sma');
-        Route::get('create', 'create')->name('sma.create');
-        Route::post('store', 'store')->name('sma.store');
-        Route::get('show/{id}', 'show')->name('sma.show');
-        Route::get('edit/{id}', 'edit')->name('sma.edit');
-        Route::put('edit/{id}', 'update')->name('sma.update');
-        Route::delete('destroy/{id}', 'destroy')->name('sma.destroy');
+    Route::controller(smaController::class)->prefix('SMA_SMK')->group(function () {
+        Route::get('', 'index')->name('SMA_SMK');
+        Route::get('create', 'create')->name('SMA_SMK.create');
+        Route::post('store', 'store')->name('SMA_SMK.store');
+        Route::get('show/{id}', 'show')->name('SMA_SMK.show');
+        Route::get('edit/{id}', 'edit')->name('SMA_SMK.edit');
+        Route::put('edit/{id}', 'update')->name('SMA_SMK.update');
+        Route::delete('destroy/{id}', 'destroy')->name('SMA_SMK.destroy');
     });
 
     Route::controller(hotelController::class)->prefix('hotel')->group(function () {
@@ -65,14 +64,14 @@ Route::middleware('auth')->group(function () {
         Route::delete('destroy/{id}', 'destroy')->name('hotel.destroy');
     });
 
-    Route::controller(univController::class)->prefix('univ')->group(function () {
-        Route::get('', 'index')->name('univ');
-        Route::get('create', 'create')->name('univ.create');
-        Route::post('store', 'store')->name('univ.store');
-        Route::get('show/{id}', 'show')->name('univ.show');
-        Route::get('edit/{id}', 'edit')->name('univ.edit');
-        Route::put('edit/{id}', 'update')->name('univ.update');
-        Route::delete('destroy/{id}', 'destroy')->name('univ.destroy');
+    Route::controller(univController::class)->prefix('universitas')->group(function () {
+        Route::get('', 'index')->name('universitas');
+        Route::get('create', 'create')->name('universitas.create');
+        Route::post('store', 'store')->name('universitas.store');
+        Route::get('show/{id}', 'show')->name('universitas.show');
+        Route::get('edit/{id}', 'edit')->name('universitas.edit');
+        Route::put('edit/{id}', 'update')->name('universitas.update');
+        Route::delete('destroy/{id}', 'destroy')->name('universitas.destroy');
     });
 
     Route::controller(BankController::class)->prefix('bank')->group(function () {
@@ -113,6 +112,16 @@ Route::middleware('auth')->group(function () {
         Route::get('edit/{id}', 'edit')->name('wisata_lamsel.edit');
         Route::put('edit/{id}', 'update')->name('wisata_lamsel.update');
         Route::delete('destroy/{id}', 'destroy')->name('wisata_lamsel.destroy');
+    });
+
+    Route::controller(wisata_kulinerController::class)->prefix('wisata_kuliner')->group(function () {
+        Route::get('', 'index')->name('wisata_kuliner');
+        Route::get('create', 'create')->name('wisata_kuliner.create');
+        Route::post('store', 'store')->name('wisata_kuliner.store');
+        Route::get('show/{id}', 'show')->name('wisata_kuliner.show');
+        Route::get('edit/{id}', 'edit')->name('wisata_kuliner.edit');
+        Route::put('edit/{id}', 'update')->name('wisata_kuliner.update');
+        Route::delete('destroy/{id}', 'destroy')->name('wisata_kuliner.destroy');
     });
 
     Route::get('/profile', [App\Http\Controllers\AuthController::class, 'profile'])->name('profile');

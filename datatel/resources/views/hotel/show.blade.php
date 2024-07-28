@@ -68,12 +68,18 @@
             value="{{ $hotel->sosmed_pic }}" readonly>
     </div>
     <div class="col mb-3">
+        <label class="form-label">No HP PIC</label>
+        <input type="text" name="no_hp" class="form-control" placeholder="No HP PIC"
+            value="{{ $hotel->no_hp }}" readonly>
+    </div>
+    
+</div>
+<div class="row">
+    <div class="col mb-3">
         <label class="form-label">Tersedia Layanan</label>
         <input type="text" name="tersedia_layanan" class="form-control" placeholder="Tersedia Layanan"
             value="{{ $hotel->tersedia_layanan }}" readonly>
     </div>
-</div>
-<div class="row">
     <div class="col mb-3">
         <label class="form-label">Status Berlangganan</label>
         <input type="text" name="status_berlangganan" class="form-control" placeholder="Status Berlangganan"
