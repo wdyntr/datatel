@@ -11,9 +11,11 @@ use App\Http\Controllers\faskesController;
 use App\Http\Controllers\cafeController;
 use App\Http\Controllers\wisata_lamselController;
 use App\Http\Controllers\wisata_kulinerController;
+use App\Http\Controllers\DashboardController;
 
 Route::get('/', function () {
-    return view('welcome');
+    // return view('welcome');
+    return view('dashboard');
 });
 
 Route::controller(AuthController::class)->group(function () {
@@ -28,9 +30,7 @@ Route::controller(AuthController::class)->group(function () {
 });
 
 Route::middleware('auth')->group(function () {
-    Route::get('dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
+    Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
     Route::get('/search', [App\Http\Controllers\SearchController::class, 'index'])->name('search.index');
 

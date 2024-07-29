@@ -2,7 +2,7 @@
 
 @section('contents')
 <div class="d-flex align-items-center justify-content-between">
-    <h1 class="mb-0">Search Results for "{{ $query }}"</h1>
+    <h1 class="mb-0">Hasil Pencarian "{{ $query }}"</h1>
 </div>
 <hr />
 @if(Session::has('success'))

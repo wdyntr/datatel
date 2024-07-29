@@ -2,7 +2,7 @@
 
 @section('contents')
 <div class="d-flex align-items-center justify-content-between">
-    <h1 class="mb-0">List Data Pelanggan</h1>
+    <h1 class="mb-0">List Data Pelanggan BGES</h1>
     <a href="{{ route('datapelanggan.create') }}" class="btn btn-primary">Add data</a>
 </div>
 <hr />
