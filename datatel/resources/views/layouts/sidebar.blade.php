@@ -25,7 +25,7 @@
     </li>
 
     <li class="nav-item">
-        <a class="nav-link" href="{{ route('SMA_SMK') }}">
+        <a class="nav-link" href="{{ route('sma_smk') }}">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>SMA</span></a>
     </li>

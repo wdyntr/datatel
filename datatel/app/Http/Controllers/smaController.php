@@ -14,7 +14,7 @@ class smaController extends Controller
     {
         $sma = Sma::orderBy('created_at', 'DESC')->get();
 
-        return view('SMA_SMK.index', compact('sma'));
+        return view('sma_smk.index', compact('sma'));
     }
 
     /**
@@ -22,7 +22,7 @@ class smaController extends Controller
      */
     public function create()
     {
-        return view('SMA_SMK.create');
+        return view('sma_smk.create');
     }
 
     /**
@@ -47,7 +47,7 @@ class smaController extends Controller
 
         Sma::create($data);
 
-        return redirect()->route('SMA_SMK')->with('success', 'Data berhasil ditambahkan!');
+        return redirect()->route('sma_smk')->with('success', 'Data berhasil ditambahkan!');
     }
 
     /**
@@ -56,8 +56,8 @@ class smaController extends Controller
     public function show(string $id)
     {
         $sma = Sma::findOrFail($id);
-  
-        return view('SMA_SMK.show', compact('sma'));
+
+        return view('sma_smk.show', compact('sma'));
     }
 
     /**
@@ -66,8 +66,8 @@ class smaController extends Controller
     public function edit(string $id)
     {
         $sma = Sma::findOrFail($id);
-  
-        return view('SMA_SMK.edit', compact('sma'));
+
+        return view('sma_smk.edit', compact('sma'));
     }
 
     /**
@@ -91,10 +91,10 @@ class smaController extends Controller
         ]);
 
         $sma = Sma::findOrFail($id);
-  
+
         $sma->update($data);
-  
-        return redirect()->route('SMA_SMK')->with('success', 'Data berhasil di update');
+
+        return redirect()->route('sma_smk')->with('success', 'Data berhasil di update');
     }
 
     /**
@@ -103,9 +103,9 @@ class smaController extends Controller
     public function destroy(string $id)
     {
         $sma = Sma::findOrFail($id);
-  
+
         $sma->delete();
-  
-        return redirect()->route('SMA_SMK')->with('success', 'Data berhasil di hapus');
+
+        return redirect()->route('sma_smk')->with('success', 'Data berhasil di hapus');
     }
 }

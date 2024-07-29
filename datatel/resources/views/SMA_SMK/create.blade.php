@@ -13,7 +13,7 @@
         </ul>
     </div>
 @endif
-<form action="{{ route('SMA_SMK.store') }}" method="POST" enctype="multipart/form-data">
+<form action="{{ route('sma_smk.store') }}" method="POST" enctype="multipart/form-data">
     @csrf
     <div class="row mb-3">
         <div class="col">
@@ -44,12 +44,12 @@
             <input type="text" name="provinsi" class="form-control" placeholder="Provinsi">
         </div>
         <div class="col">
-        <select class="form-control" name="jaringan_optik">
-            <option value="">-- Pilih Ketersediaan Jaringan Optik --</option>
-            <option value="Ready">Ready</option>
-            <option value="Not Ready">Not Ready</option>
-        </select>
-    </div>
+            <select class="form-control" name="jaringan_optik">
+                <option value="">-- Pilih Ketersediaan Jaringan Optik --</option>
+                <option value="Ready">Ready</option>
+                <option value="Not Ready">Not Ready</option>
+            </select>
+        </div>
     </div>
     <div class="row mb-3">
         <div class="col">

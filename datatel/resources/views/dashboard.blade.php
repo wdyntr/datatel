@@ -27,7 +27,7 @@
     <!-- Earnings (Monthly) Card Example -->
     <div class="col-xl-3 col-md-6 mb-4">
         <div class="card border-left-primary shadow h-70 py-2">
-            <a href="{{ route('SMA_SMK') }}">
+            <a href="{{ route('sma_smk') }}">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
@@ -65,7 +65,7 @@
     <!-- Earnings (Monthly) Card Example -->
     <div class="col-xl-3 col-md-6 mb-4">
         <div class="card border-left-primary shadow h-70 py-2">
-            <a href="{{ route('univ') }}">
+            <a href="{{ route('universitas') }}">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
@@ -160,7 +160,7 @@
     <!-- Earnings (Monthly) Card Example -->
     <div class="col-xl-3 col-md-6 mb-4">
         <div class="card border-left-primary shadow h-70 py-2">
-            <a href="{{ route('wisataKuliner') }}">
+            <a href="{{ route('wisata_kuliner') }}">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">

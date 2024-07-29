@@ -23,7 +23,7 @@ class SearchController extends Controller
         $smas = Sma::where('nama', 'LIKE', "%{$query}%")
             ->get()
             ->map(function ($item) {
-                $item->type = 'SMA/SMK';
+                $item->type = 'sma_smk';
                 return $item;
             });
 

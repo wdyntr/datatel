@@ -44,14 +44,14 @@ Route::middleware('auth')->group(function () {
         Route::delete('destroy/{id}', 'destroy')->name('datapelanggan.destroy');
     });
 
-    Route::controller(smaController::class)->prefix('SMA_SMK')->group(function () {
-        Route::get('', 'index')->name('SMA_SMK');
-        Route::get('create', 'create')->name('SMA_SMK.create');
-        Route::post('store', 'store')->name('SMA_SMK.store');
-        Route::get('show/{id}', 'show')->name('SMA_SMK.show');
-        Route::get('edit/{id}', 'edit')->name('SMA_SMK.edit');
-        Route::put('edit/{id}', 'update')->name('SMA_SMK.update');
-        Route::delete('destroy/{id}', 'destroy')->name('SMA_SMK.destroy');
+    Route::controller(smaController::class)->prefix('sma_smk')->group(function () {
+        Route::get('', 'index')->name('sma_smk');
+        Route::get('create', 'create')->name('sma_smk.create');
+        Route::post('store', 'store')->name('sma_smk.store');
+        Route::get('show/{id}', 'show')->name('sma_smk.show');
+        Route::get('edit/{id}', 'edit')->name('sma_smk.edit');
+        Route::put('edit/{id}', 'update')->name('sma_smk.update');
+        Route::delete('destroy/{id}', 'destroy')->name('sma_smk.destroy');
     });
 
     Route::controller(hotelController::class)->prefix('hotel')->group(function () {

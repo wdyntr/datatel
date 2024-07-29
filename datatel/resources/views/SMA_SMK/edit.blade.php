@@ -13,7 +13,7 @@
     </div>
 @endif
 
-<form action="{{ route('SMA_SMK.update', $sma->id) }}" method="POST">
+<form action="{{ route('sma_smk.update', $sma->id) }}" method="POST">
     @csrf
     @method('PUT')
     <div class="row">
