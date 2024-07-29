@@ -3,7 +3,7 @@
 @section('contents')
 
 <div class="d-flex align-items-center justify-content-between">
-    <h1 class="mb-0">List Data Wisata Kuliner Bandara Raden Intan II Lampung</h1>
+    <h1 class="mb-0">List Data Wisata Kuliner <br> Bandara Raden Intan II Lampung</h1>
 
     <a href="{{ route('wisata_kuliner.create') }}" class="btn btn-primary">Add data</a>
 </div>
