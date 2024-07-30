@@ -28,9 +28,10 @@ class DashboardController extends Controller
         $count4 = \App\Models\univ::whereIn('layanan_telkom', ['sudah', 'aktif'])->count();
         $count5 = \App\Models\wisata_lamsel::whereIn('berlangganan', ['sudah', 'aktif'])->count();
         $count6 = \App\Models\wisataKuliner::whereIn('berlangganan', ['sudah', 'aktif'])->count();
+        $count7 = \App\Models\pdam::whereIn('status_berlangganan', ['sudah', 'aktif'])->count();
 
         // Menghitung total jumlah pelanggan berlangganan
-        $jumlah = $count1 + $count2 + $count3 + $count4 + $count5 + $count6;
+        $jumlah = $count1 + $count2 + $count3 + $count4 + $count5 + $count6 + $count7;
 
         // Mengirim data ke view
         return view('dashboard', compact('jumlah', 'totalCount'));
@@ -77,8 +78,6 @@ class DashboardController extends Controller
                 ->merge($pdam)
                 ->merge($wisataKuliner);
         }
-
-
 
         return view('filter.results', compact('results', 'status'));
     }

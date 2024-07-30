@@ -51,6 +51,9 @@
                                                 @case('wisataKuliner')
                                                     {{ 'Wisata Kuliner' }}
                                                     @break
+                                                @case('pdam')
+                                                    {{ 'PDAM' }}
+                                                    @break
                                                 @default
                                                     {{ class_basename($result) }}
                                             @endswitch
@@ -79,6 +82,9 @@
                                                     @break
                                                 @case('wisataKuliner')
                                                     {{ $result->nama }}
+                                                    @break
+                                                @case('pdam')
+                                                    {{ $result->nama_pelanggan }}
                                                     @break
                                                 @default
                                                     {{ $result->nama ?? $result->nama_akun ?? $result->title ?? 'N/A' }}

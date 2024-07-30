@@ -43,6 +43,7 @@ class PDAMController extends Controller
             'koordinat' => 'nullable|string',
             'email_pic' => 'nullable|string',
             'no_hp_pic' => 'nullable|integer',
+            'sosmed_pic' => 'nullable|string',
             'tersedia_layanan' => 'nullable|string',
             'status_berlangganan' => 'nullable|string',
             'jenis_layanan' => 'nullable|string',

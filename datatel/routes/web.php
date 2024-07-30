@@ -15,8 +15,9 @@ use App\Http\Controllers\wisata_kulinerController;
 use App\Http\Controllers\DashboardController;
 
 Route::get('/', function () {
-    return view('welcome');
+    // return view('welcome');
     // return view('dashboard');
+    return view('auth.login');
 });
 
 Route::controller(AuthController::class)->group(function () {

@@ -24,6 +24,7 @@ class pdam extends Model
         'koordinat',
         'email_pic',
         'no_hp_pic',
+        'sosmed_pic',
         'tersedia_layanan',
         'status_berlangganan',
         'jenis_layanan',
@@ -31,6 +32,6 @@ class pdam extends Model
 
     public function getDisplayNameAttribute()
     {
-        return $this->nama;
+        return $this->nama_pelanggan;
     }
 }
