@@ -6,11 +6,9 @@
 <!-- Tampilkan pesan kesalahan jika ada -->
 @if ($errors->any())
     <div class="alert alert-danger">
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
+        @foreach ($errors->all() as $error)
+            <div>{{ $error }}</div>
+        @endforeach
     </div>
 @endif
 <form action="{{ route('sma_smk.store') }}" method="POST" enctype="multipart/form-data">

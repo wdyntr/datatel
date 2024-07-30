@@ -12,6 +12,7 @@ use App\Models\Sma;
 use App\Models\univ;
 use App\Models\wisata_lamsel;
 use App\Models\wisataKuliner;
+use App\Models\pdam;
 
 class DashboardController extends Controller
 {
@@ -47,6 +48,7 @@ class DashboardController extends Controller
             $univ = Univ::whereIn('layanan_telkom', ['sudah', 'aktif'])->get();
             $wisataLamsel = wisata_lamsel::whereIn('berlangganan', ['sudah', 'aktif'])->get();
             $wisataKuliner = WisataKuliner::whereIn('berlangganan', ['sudah', 'aktif'])->get();
+            $pdam = pdam::whereIn('status_berlangganan', ['sudah', 'aktif'])->get();
 
             $results = collect()
                 ->merge($bank)
@@ -55,6 +57,7 @@ class DashboardController extends Controller
                 ->merge($univ)
                 ->merge($wisataLamsel)
                 ->merge($wisataKuliner)
+                ->merge($pdam)
                 ->merge($dataPelanggan);
         } else {
             $bank = Bank::whereIn('layanan_telkom', ['belum', 'tidak aktif'])->get();
@@ -63,6 +66,7 @@ class DashboardController extends Controller
             $univ = Univ::whereIn('layanan_telkom', ['belum', 'tidak aktif'])->get();
             $wisataLamsel = wisata_lamsel::whereIn('berlangganan', ['belum', 'tidak aktif'])->get();
             $wisataKuliner = WisataKuliner::whereIn('berlangganan', ['belum', 'tidak aktif'])->get();
+            $pdam = pdam::whereIn('status_berlangganan', ['belum', 'tidak aktif'])->get();
 
             $results = collect()
                 ->merge($bank)
@@ -70,6 +74,7 @@ class DashboardController extends Controller
                 ->merge($hotel)
                 ->merge($univ)
                 ->merge($wisataLamsel)
+                ->merge($pdam)
                 ->merge($wisataKuliner);
         }
 

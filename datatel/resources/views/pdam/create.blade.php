@@ -10,7 +10,8 @@
         @endforeach
     </div>
 @endif
-<form action="{{ route('hotel.store') }}" method="POST" enctype="multipart/form-data">
+
+<form action="{{ route('pdam.store') }}" method="POST" enctype="multipart/form-data">
     @csrf
     <div class="row mb-3">
         <div class="col">
@@ -27,6 +28,7 @@
         <div class="col">
             <input type="text" name="alamat" class="form-control" placeholder="Alamat">
         </div>
+
     </div>
     <div class="row mb-3">
         <div class="col">
@@ -35,40 +37,60 @@
         <div class="col">
             <input type="text" name="kabupaten" class="form-control" placeholder="Kabupaten">
         </div>
+
     </div>
+
     <div class="row mb-3">
+        <div class="col">
+            <input type="text" name="concat" class="form-control" placeholder="Concat">
+        </div>
         <div class="col">
             <input type="text" name="provinsi" class="form-control" placeholder="Provinsi">
         </div>
+
+    </div>
+
+    <div class="row mb-3">
         <div class="col">
             <input type="text" name="pelayanan" class="form-control" placeholder="Pelayanan">
         </div>
-    </div>
-    <div class="row mb-3">
         <div class="col">
             <input type="text" name="koordinat" class="form-control" placeholder="Koordinat">
         </div>
+
+    </div>
+
+    <div class="row mb-3">
         <div class="col">
             <input type="text" name="email_pic" class="form-control" placeholder="Email PIC">
         </div>
+        <div class="col">
+            <input type="text" name="no_hp_pic" class="form-control" placeholder="No HP PIC">
+        </div>
+
     </div>
+
     <div class="row mb-3">
         <div class="col">
             <input type="text" name="sosmed_pic" class="form-control" placeholder="Sosmed PIC">
         </div>
         <div class="col">
-            <input type="text" name="no_hp" class="form-control" placeholder="No HP PIC" id="no_hp">
+            <select class="form-control" name="tersedia_layanan">
+                <option value="">-- Pilih Ketersediaan Layanan --</option>
+                <option value="Tersedia Layanan">Tersedia Layanan</option>
+                <option value="Tidak Tersedia">Tidak Tersedia</option>
+            </select>
         </div>
+
     </div>
+
     <div class="row mb-3">
-        <div class="col">
-            <input type="text" name="tersedia_layanan" class="form-control" placeholder="Tersedia Layanan">
-        </div>
+
         <div class="col">
             <select class="form-control" name="status_berlangganan">
-                <option value="">-- Pilih Status Berlangganan --</option>
+                <option value="">-- Pilih Status Belangganan --</option>
                 <option value="Aktif">Aktif</option>
-                <option value="Tidak Aktif">Tidak AKtif</option>
+                <option value="Tidak Aktif">Tidak Aktif</option>
             </select>
         </div>
         <div class="col">

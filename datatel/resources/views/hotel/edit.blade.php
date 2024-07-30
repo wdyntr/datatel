@@ -5,11 +5,9 @@
 <hr />
 @if ($errors->any())
     <div class="alert alert-danger">
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
+        @foreach ($errors->all() as $error)
+            <div>{{ $error }}</div>
+        @endforeach
     </div>
 @endif
 <form action="{{ route('hotel.update', $hotel->id) }}" method="POST">
@@ -80,10 +78,9 @@
         </div>
         <div class="col mb-3">
             <label class="form-label">No HP PIC</label>
-            <input type="text" name="no_hp" class="form-control" placeholder="No HP PIC"
-                value="{{ $hotel->no_hp }}">
+            <input type="text" name="no_hp" class="form-control" placeholder="No HP PIC" value="{{ $hotel->no_hp }}">
         </div>
-        
+
     </div>
     <div class="row">
         <div class="col mb-3">

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PDAMController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProductController;
@@ -123,6 +124,16 @@ Route::middleware('auth')->group(function () {
         Route::get('edit/{id}', 'edit')->name('wisata_kuliner.edit');
         Route::put('edit/{id}', 'update')->name('wisata_kuliner.update');
         Route::delete('destroy/{id}', 'destroy')->name('wisata_kuliner.destroy');
+    });
+
+    Route::controller(PDAMController::class)->prefix('pdam')->group(function () {
+        Route::get('', 'index')->name('pdam');
+        Route::get('create', 'create')->name('pdam.create');
+        Route::post('store', 'store')->name('pdam.store');
+        Route::get('show/{id}', 'show')->name('pdam.show');
+        Route::get('edit/{id}', 'edit')->name('pdam.edit');
+        Route::put('edit/{id}', 'update')->name('pdam.update');
+        Route::delete('destroy/{id}', 'destroy')->name('pdam.destroy');
     });
 
     Route::get('/profile', [App\Http\Controllers\AuthController::class, 'profile'])->name('profile');
