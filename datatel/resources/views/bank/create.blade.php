@@ -26,7 +26,11 @@
             <input type="text" name="am" class="form-control" placeholder="AM">
         </div>
         <div class="col">
-            <input type="text" name="layanan_telkom" class="form-control" placeholder="Layanan Telkom">
+            <select class="form-control" name="layanan_telkom">
+                <option value="">-- Pilih Layanan Telkom --</option>
+                <option value="Sudah">Sudah</option>
+                <option value="Belum">Belum</option>
+            </select>
         </div>
     </div>
 

@@ -34,9 +34,12 @@
             <input type="text" name="am" class="form-control" placeholder="AM" value="{{ $bank->am }}">
         </div>
         <div class="col mb-3">
-            <label class="form-label">Layanan Telkom</label>
-            <input class="form-control" name="layanan_telkom" placeholder="Layanan Telkom"
-                value="{{ $bank->layanan_telkom }}">
+            <label class="form-label">Ketersediaan Jaringan Optik</label>
+            <select class="form-control" name="layanan_telkom">
+                <option value="">-- Pilih Layanan Telkom --</option>
+                <option value="Sudah" {{ $bank->layanan_telkom == 'Sudah' ? 'selected' : '' }}>Sudah</option>
+                <option value="Belum" {{ $bank->layanan_telkom == 'Belum' ? 'selected' : '' }}>Belum</option>
+            </select>
         </div>
     </div>
     <div class="row">

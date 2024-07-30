@@ -14,8 +14,8 @@ use App\Http\Controllers\wisata_kulinerController;
 use App\Http\Controllers\DashboardController;
 
 Route::get('/', function () {
-    // return view('welcome');
-    return view('dashboard');
+    return view('welcome');
+    // return view('dashboard');
 });
 
 Route::controller(AuthController::class)->group(function () {
@@ -31,6 +31,7 @@ Route::controller(AuthController::class)->group(function () {
 
 Route::middleware('auth')->group(function () {
     Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::get('/filter', [DashboardController::class, 'filter'])->name('filter');
 
     Route::get('/search', [App\Http\Controllers\SearchController::class, 'index'])->name('search.index');
 
