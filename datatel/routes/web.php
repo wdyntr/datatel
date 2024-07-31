@@ -14,6 +14,7 @@ use App\Http\Controllers\wisata_lamselController;
 use App\Http\Controllers\wisata_kulinerController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PtController;
+use App\Http\Controllers\bprController;
 
 Route::get('/', function () {
     // return view('welcome');
@@ -146,6 +147,16 @@ Route::middleware('auth')->group(function () {
         Route::get('edit/{id}', 'edit')->name('perusahaan.edit');
         Route::put('edit/{id}', 'update')->name('perusahaan.update');
         Route::delete('destroy/{id}', 'destroy')->name('perusahaan.destroy');
+    });
+
+    Route::controller(bprController::class)->prefix('bpr')->group(function () {
+        Route::get('', 'index')->name('bpr');
+        Route::get('create', 'create')->name('bpr.create');
+        Route::post('store', 'store')->name('bpr.store');
+        Route::get('show/{id}', 'show')->name('bpr.show');
+        Route::get('edit/{id}', 'edit')->name('bpr.edit');
+        Route::put('edit/{id}', 'update')->name('bpr.update');
+        Route::delete('destroy/{id}', 'destroy')->name('bpr.destroy');
     });
 
     Route::get('/profile', [App\Http\Controllers\AuthController::class, 'profile'])->name('profile');

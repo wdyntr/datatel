@@ -86,6 +86,12 @@
     </li>
 
     <li class="nav-item">
+        <a class="nav-link" href="{{ route('bpr') }}">
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <span>List BPR</span></a>
+    </li>
+
+    <li class="nav-item">
         <a class="nav-link" href="/profile">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Profile</span></a>

@@ -54,6 +54,9 @@
                                                 @case('pdam')
                                                     {{ 'PDAM' }}
                                                     @break
+                                                @case('perusahaan')
+                                                    {{ 'Perusahaan' }}
+                                                    @break
                                                 @default
                                                     {{ class_basename($result) }}
                                             @endswitch
