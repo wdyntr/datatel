@@ -13,6 +13,7 @@ use App\Models\Univ;
 use App\Models\wisata_lamsel;
 use App\Models\wisataKuliner;
 use App\Models\pdam;
+use App\Models\perusahaan;
 
 class SearchController extends Controller
 {
@@ -91,6 +92,13 @@ class SearchController extends Controller
                 return $item;
             });
 
+        $perusahaan = perusahaan::where('nama', 'LIKE', "%{$query}%")
+            ->get()
+            ->map(function ($item) {
+                $item->type = 'perusahaan';
+                return $item;
+            });
+
         // Gabungkan semua hasil
         $results = collect()
             ->merge($smas)
@@ -102,6 +110,7 @@ class SearchController extends Controller
             ->merge($universitas)
             ->merge($wisataLamsel)
             ->merge($pdam)
+            ->merge($perusahaan)
             ->merge($wisatakuilner);
 
         return view('search.index', ['results' => $results, 'query' => $query]);

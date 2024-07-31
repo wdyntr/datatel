@@ -18,7 +18,7 @@
                                 <tr>
                                     <th>Type</th>
                                     <th>ID</th>
-                                    <th>Name/Title</th>
+                                    <th>Nama</th>
                                     <!-- Tambahkan header lain sesuai kebutuhan -->
                                 </tr>
                             </thead>

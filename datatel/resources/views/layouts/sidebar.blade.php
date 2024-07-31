@@ -80,6 +80,12 @@
     </li>
 
     <li class="nav-item">
+        <a class="nav-link" href="{{ route('perusahaan') }}">
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <span>List Perusahaan</span></a>
+    </li>
+
+    <li class="nav-item">
         <a class="nav-link" href="/profile">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Profile</span></a>
