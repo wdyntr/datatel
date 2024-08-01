@@ -14,6 +14,7 @@ use App\Models\wisata_lamsel;
 use App\Models\wisataKuliner;
 use App\Models\pdam;
 use App\Models\perusahaan;
+use App\Models\bpr;
 
 class DashboardController extends Controller
 {
@@ -31,12 +32,24 @@ class DashboardController extends Controller
         $count6 = \App\Models\wisataKuliner::whereIn('berlangganan', ['sudah', 'aktif'])->count();
         $count7 = \App\Models\pdam::whereIn('status_berlangganan', ['sudah', 'aktif'])->count();
         $count8 = \App\Models\perusahaan::whereIn('status_berlangganan', ['sudah', 'aktif'])->count();
+        $count9 = \App\Models\bpr::whereIn('status_berlangganan', ['sudah', 'aktif'])->count();
+
+        // Menghitung jumlah pelanggan berlangganan dari tabel-tabel yang berbeda
+        $min1 = \App\Models\bank::whereIn('layanan_telkom', ['belum', 'tidak aktif'])->count();
+        $min2 = \App\Models\cafe::whereIn('berlangganan', ['belum', 'tidak aktif'])->count();
+        $min3 = \App\Models\hotel::whereIn('status_berlangganan', ['belum', 'tidak aktif'])->count();
+        $min4 = \App\Models\univ::whereIn('layanan_telkom', ['belum', 'tidak aktif'])->count();
+        $min5 = \App\Models\wisata_lamsel::whereIn('berlangganan', ['belum', 'tidak aktif'])->count();
+        $min6 = \App\Models\wisataKuliner::whereIn('berlangganan', ['belum', 'tidak aktif'])->count();
+        $min7 = \App\Models\pdam::whereIn('status_berlangganan', ['belum', 'tidak aktif'])->count();
+        $min8 = \App\Models\perusahaan::whereIn('status_berlangganan', ['belum', 'tidak aktif'])->count();
+        $min9 = \App\Models\bpr::whereIn('status_berlangganan', ['belum', 'tidak aktif'])->count();
 
         // Menghitung total jumlah pelanggan berlangganan
-        $jumlah = $count1 + $count2 + $count3 + $count4 + $count5 + $count6 + $count7 + $count8;
-
+        $jumlah = $count1 + $count2 + $count3 + $count4 + $count5 + $count6 + $count7 + $count8 + $count9;
+        $total = $min1 + $min2 + $min3 + $min4 + $min5 + $min6 + $min7 + $min8 + $min9;
         // Mengirim data ke view
-        return view('dashboard', compact('jumlah', 'totalCount'));
+        return view('dashboard', compact('jumlah', 'totalCount', 'total'));
     }
 
     public function filter(Request $request)
@@ -53,6 +66,7 @@ class DashboardController extends Controller
             $wisataKuliner = WisataKuliner::whereIn('berlangganan', ['sudah', 'aktif'])->get();
             $pdam = pdam::whereIn('status_berlangganan', ['sudah', 'aktif'])->get();
             $perusahaan = perusahaan::whereIn('status_berlangganan', ['sudah', 'aktif'])->get();
+            $bpr = bpr::whereIn('status_berlangganan', ['sudah', 'aktif'])->get();
 
             $results = collect()
                 ->merge($bank)
@@ -63,6 +77,7 @@ class DashboardController extends Controller
                 ->merge($wisataKuliner)
                 ->merge($pdam)
                 ->merge($perusahaan)
+                ->merge($bpr)
                 ->merge($dataPelanggan);
         } else {
             $bank = Bank::whereIn('layanan_telkom', ['belum', 'tidak aktif'])->get();
@@ -73,6 +88,7 @@ class DashboardController extends Controller
             $wisataKuliner = WisataKuliner::whereIn('berlangganan', ['belum', 'tidak aktif'])->get();
             $pdam = pdam::whereIn('status_berlangganan', ['belum', 'tidak aktif'])->get();
             $perusahaan = perusahaan::whereIn('status_berlangganan', ['belum', 'tidak aktif'])->get();
+            $bpr = bpr::whereIn('status_berlangganan', ['belum', 'tidak aktif'])->get();
 
             $results = collect()
                 ->merge($bank)
@@ -82,6 +98,7 @@ class DashboardController extends Controller
                 ->merge($wisataLamsel)
                 ->merge($pdam)
                 ->merge($perusahaan)
+                ->merge($bpr)
                 ->merge($wisataKuliner);
         }
 

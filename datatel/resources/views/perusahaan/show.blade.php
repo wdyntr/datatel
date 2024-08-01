@@ -60,7 +60,7 @@
             value="{{ $perusahaan->no_telp }}" readonly>
     </div>
     <div class="col mb-3">
-        <label class="form-label">jenis Layanan</label>
+        <label class="form-label">Jenis Layanan</label>
         <input class="form-control" name="jenis_layanan" placeholder="Jenis Layanan"
             value="{{ $perusahaan->jenis_layanan }}" readonly>
     </div>

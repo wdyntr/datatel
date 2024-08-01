@@ -1,8 +1,6 @@
 <!-- resources/views/filter-results.blade.php -->
 @extends('layouts.app')
 
-@section('title', 'Filter Results')
-
 @section('contents')
 <div class="row">
     <div class="col-xl-12 col-md-12 mb-4">
@@ -57,6 +55,9 @@
                                                 @case('perusahaan')
                                                     {{ 'Perusahaan' }}
                                                     @break
+                                                @case('bpr')
+                                                    {{ 'BPR' }}
+                                                    @break
                                                 @default
                                                     {{ class_basename($result) }}
                                             @endswitch
@@ -90,7 +91,7 @@
                                                     {{ $result->nama_pelanggan }}
                                                     @break
                                                 @default
-                                                    {{ $result->nama ?? $result->nama_akun ?? $result->title ?? 'N/A' }}
+                                                    {{ $result->nama ?? $result->nama_pelanggan ?? $result->nama_akun ?? $result->title ?? 'N/A' }}
                                             @endswitch
                                         </td>
                                         <!-- Tambahkan kolom lain sesuai kebutuhan -->

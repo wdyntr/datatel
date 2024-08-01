@@ -8,8 +8,9 @@
     @method('PUT')
     <div class="row">
         <div class="col mb-3">
-            <label class="form-label">Nama</label>
-            <input type="text" name="nama" class="form-control" placeholder="Nama" value="{{ $bpr->nama_pelanggan }}">
+            <label class="form-label">Nama Pelanggan</label>
+            <input type="text" name="nama_pelanggan" class="form-control" placeholder="Nama Pelanggan"
+                value="{{ $bpr->nama_pelanggan }}">
         </div>
         <div class="col mb-3">
             <label class="form-label">Nama AM</label>
@@ -77,7 +78,7 @@
                 <option value="">-- Pilih Tersedia Layanan --</option>
                 <option value="Tersedia Layanan" {{ $bpr->tersedia_layanan == 'Tersedia Layanan' ? 'selected' : '' }}>
                     Tersedia Layanan</option>
-                <option value="Tidak Tersedia" {{ $bpr->tersedia_layanan == 'Tidka Tersedia' ? 'selected' : '' }}>Tidak
+                <option value="Tidak Tersedia" {{ $bpr->tersedia_layanan == 'Tidak Tersedia' ? 'selected' : '' }}>Tidak
                     Tersedia</option>
             </select>
         </div>
@@ -88,9 +89,10 @@
             <label class="form-label">Status Berlangganan</label>
             <select class="form-control" name="status_berlangganan">
                 <option value="">-- Pilih Status Berlangganan --</option>
-                <option value="Sudah" {{ $bpr->status_berlangganan == 'Sudah' ? 'selected' : '' }}>
-                    Sudah</option>
-                <option value="Belum" {{ $bpr->status_berlangganan == 'Belum' ? 'selected' : '' }}>Belum</option>
+                <option value="Aktif" {{ $bpr->status_berlangganan == 'Aktif' ? 'selected' : '' }}>
+                    Aktif</option>
+                <option value="Tidak Aktif" {{ $bpr->status_berlangganan == 'Tidak Aktif' ? 'selected' : '' }}>Tidak Aktif
+                </option>
             </select>
         </div>
         <div class="col mb-3">

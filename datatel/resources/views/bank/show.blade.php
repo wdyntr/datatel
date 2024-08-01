@@ -11,7 +11,8 @@
     </div>
     <div class="col mb-3">
         <label class="form-label">Alamat</label>
-        <input type="text" name="alamat" class="form-control" placeholder="Alamat" value="{{ $bank->alamat }}" readonly>
+        <textarea name="alamat" class="form-control" rows="2" placeholder="Alamat"
+            readonly>{{ $bank->alamat }}</textarea>
     </div>
 </div>
 <div class="row">

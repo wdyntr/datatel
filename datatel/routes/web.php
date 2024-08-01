@@ -15,6 +15,7 @@ use App\Http\Controllers\wisata_kulinerController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PtController;
 use App\Http\Controllers\bprController;
+use App\Http\Controllers\stasiunTvController;
 
 Route::get('/', function () {
     // return view('welcome');
@@ -157,6 +158,16 @@ Route::middleware('auth')->group(function () {
         Route::get('edit/{id}', 'edit')->name('bpr.edit');
         Route::put('edit/{id}', 'update')->name('bpr.update');
         Route::delete('destroy/{id}', 'destroy')->name('bpr.destroy');
+    });
+
+    Route::controller(stasiunTvController::class)->prefix('stasiunTv')->group(function () {
+        Route::get('', 'index')->name('stasiunTv');
+        Route::get('create', 'create')->name('stasiunTv.create');
+        Route::post('store', 'store')->name('stasiunTv.store');
+        Route::get('show/{id}', 'show')->name('stasiunTv.show');
+        Route::get('edit/{id}', 'edit')->name('stasiunTv.edit');
+        Route::put('edit/{id}', 'update')->name('stasiunTv.update');
+        Route::delete('destroy/{id}', 'destroy')->name('stasiunTv.destroy');
     });
 
     Route::get('/profile', [App\Http\Controllers\AuthController::class, 'profile'])->name('profile');

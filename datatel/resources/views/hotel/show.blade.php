@@ -22,8 +22,8 @@
     </div>
     <div class="col mb-3">
         <label class="form-label">Alamat</label>
-        <input type="text" class="form-control" name="alamat" placeholder="Almaat" value="{{ $hotel->alamat }}"
-            readonly>
+        <textarea name="alamat" class="form-control" rows="2" placeholder="Alamat"
+            readonly>{{ $hotel->alamat }}</textarea>
     </div>
 </div>
 <div class="row">
@@ -69,10 +69,10 @@
     </div>
     <div class="col mb-3">
         <label class="form-label">No HP PIC</label>
-        <input type="text" name="no_hp" class="form-control" placeholder="No HP PIC"
-            value="{{ $hotel->no_hp }}" readonly>
+        <input type="text" name="no_hp" class="form-control" placeholder="No HP PIC" value="{{ $hotel->no_hp }}"
+            readonly>
     </div>
-    
+
 </div>
 <div class="row">
     <div class="col mb-3">

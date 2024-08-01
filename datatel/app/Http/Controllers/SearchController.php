@@ -14,6 +14,7 @@ use App\Models\wisata_lamsel;
 use App\Models\wisataKuliner;
 use App\Models\pdam;
 use App\Models\perusahaan;
+use App\Models\bpr;
 
 class SearchController extends Controller
 {
@@ -99,6 +100,13 @@ class SearchController extends Controller
                 return $item;
             });
 
+        $bpr = bpr::where('nama_pelanggan', 'LIKE', "%{$query}%")
+            ->get()
+            ->map(function ($item) {
+                $item->type = 'bpr';
+                return $item;
+            });
+
         // Gabungkan semua hasil
         $results = collect()
             ->merge($smas)
@@ -111,6 +119,7 @@ class SearchController extends Controller
             ->merge($wisataLamsel)
             ->merge($pdam)
             ->merge($perusahaan)
+            ->merge($bpr)
             ->merge($wisatakuilner);
 
         return view('search.index', ['results' => $results, 'query' => $query]);
