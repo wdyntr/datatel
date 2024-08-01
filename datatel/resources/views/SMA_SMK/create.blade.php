@@ -55,7 +55,7 @@
     </div>
     <div class="row mb-3">
         <div class="col">
-            <input type="text" name="odp" class="form-control" placeholder="ODP">
+            <input type="text" name="odp" class="form-control" placeholder="ODP Tersedia">
         </div>
         <div class="col">
             <input type="text" class="form-control" name="layanan_telkom" placeholder="Layanan Telkom Eksisting">

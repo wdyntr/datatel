@@ -64,6 +64,7 @@
         <div class="col">
             <input type="text" name="tersedia_layanan" class="form-control" placeholder="Tersedia Layanan">
         </div>
+        
         <div class="col">
             <select class="form-control" name="status_berlangganan">
                 <option value="">-- Pilih Status Berlangganan --</option>

@@ -42,13 +42,11 @@ class PDAMController extends Controller
             'pelayanan' => 'nullable|string',
             'koordinat' => 'nullable|string',
             'email_pic' => 'nullable|string',
-            'no_hp_pic' => 'nullable|integer',
+            'no_hp_pic' => 'nullable|string',
             'sosmed_pic' => 'nullable|string',
             'tersedia_layanan' => 'nullable|string',
             'status_berlangganan' => 'nullable|string',
             'jenis_layanan' => 'nullable|string',
-        ], [
-            'no_hp_pic.integer' => 'No HP PIC harus berupa bilangan bulat.',
         ]);
 
         pdam::create($data);

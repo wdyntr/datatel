@@ -18,10 +18,11 @@
         <label class="form-label">Nama AM</label>
         <input type="text" name="nama_am" class="form-control" placeholder="Lokasi" value="{{ $pdam->nama_am }}" readonly>
     </div>
+
     <div class="col mb-3">
         <label class="form-label">Alamat</label>
-        <input name="alamat" class="form-control" placeholder="Alamat"
-            value="{{ $pdam->alamat }}" readonly>
+        <textarea name="alamat" class="form-control" rows="2" placeholder="Alamat"
+            readonly>{{ $pdam->alamat }}</textarea>
     </div>
     
 </div>

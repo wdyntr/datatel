@@ -22,7 +22,7 @@
             </select>
         </div>
         <div class="col">
-            <input type="email" name="email_sosmed" class="form-control" placeholder="Email/Sosmed">
+            <input type="text" name="email_sosmed" class="form-control" placeholder="Email/Sosmed">
         </div>
     </div>
     <div class="row mb-3">

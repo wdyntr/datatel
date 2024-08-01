@@ -74,7 +74,19 @@ class ProductController extends Controller
     {
         $product = Product::findOrFail($id);
 
-        $product->update($request->all());
+        $data = $request->validate([
+            'witel' => 'nullable|string',
+            'ubis' => 'nullable|string',
+            'id_number' => 'nullable|integer',
+            'nama_akun' => 'nullable|string',
+            'am' => 'nullable|string',
+            'nipnas' => 'nullable|string',
+            'nama_grup' => 'nullable|string',
+        ], [
+            'id_number.integer' => 'ID Number harus berupa bilangan bulat.',
+        ]);
+
+        $product->update($data);
 
         return redirect()->route('datapelanggan')->with('success', 'Data berhasil di update');
     }
