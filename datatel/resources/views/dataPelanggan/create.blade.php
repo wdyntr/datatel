@@ -3,6 +3,13 @@
 @section('contents')
 <h1 class="mb-0">Add Data</h1>
 <hr />
+@if ($errors->any())
+    <div class="alert alert-danger">
+        @foreach ($errors->all() as $error)
+            <div>{{ $error }}</div>
+        @endforeach
+    </div>
+@endif
 <form action="{{ route('datapelanggan.store') }}" method="POST" enctype="multipart/form-data">
     @csrf
     <div class="row mb-3">

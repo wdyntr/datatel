@@ -17,7 +17,7 @@ return new class extends Migration {
             $table->bigInteger("id_number")->nullable();
             $table->string("nama_akun")->nullable();
             $table->string("am")->nullable();
-            $table->bigInteger("nipnas")->nullable();
+            $table->string("nipnas")->nullable();
             $table->string("nama_grup")->nullable();
             $table->timestamps();
         });

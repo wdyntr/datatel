@@ -5,7 +5,7 @@
 <div class="d-flex align-items-center justify-content-between">
     <h1 class="mb-0">List Data Stasiun TV</h1>
 
-    <a href="{{ route('stasiunTv.create') }}" class="btn btn-primary">Add data</a>
+    <a href="{{ route('stasiuntv.create') }}" class="btn btn-primary">Add data</a>
 </div>
 <hr />
 @if(Session::has('success'))
@@ -27,8 +27,8 @@
         </tr>
     </thead>
     <tbody>
-        @if($stasiunTv->count() > 0)
-            @foreach($stasiunTv as $rs)
+        @if($stasiuntv->count() > 0)
+            @foreach($stasiuntv as $rs)
                 <tr>
                     <td class="align-middle">{{ $loop->iteration }}</td>
                     <td class="align-middle">{{ $rs->nama_pelanggan }}</td>
@@ -39,9 +39,9 @@
                     <td class="align-middle">{{ $rs->provinsi }}</td>
                     <td class="align-middle">
                         <div class="btn-group" role="group" aria-label="Basic example">
-                            <a href="{{ route('stasiunTv.show', $rs->id) }}" type="button" class="btn btn-secondary">Detail</a>
-                            <a href="{{ route('stasiunTv.edit', $rs->id)}}" type="button" class="btn btn-warning">Edit</a>
-                            <form action="{{ route('stasiunTv.destroy', $rs->id) }}" method="POST" type="button"
+                            <a href="{{ route('stasiuntv.show', $rs->id) }}" type="button" class="btn btn-secondary">Detail</a>
+                            <a href="{{ route('stasiuntv.edit', $rs->id)}}" type="button" class="btn btn-warning">Edit</a>
+                            <form action="{{ route('stasiuntv.destroy', $rs->id) }}" method="POST" type="button"
                                 class="btn btn-danger p-0" onsubmit="return confirm('Delete?')">
                                 @csrf
                                 @method('DELETE')

@@ -92,6 +92,12 @@
     </li>
 
     <li class="nav-item">
+        <a class="nav-link" href="{{ route('stasiuntv') }}">
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <span>List Stasiun TV</span></a>
+    </li>
+
+    <li class="nav-item">
         <a class="nav-link" href="/profile">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Profile</span></a>

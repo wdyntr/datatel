@@ -160,14 +160,14 @@ Route::middleware('auth')->group(function () {
         Route::delete('destroy/{id}', 'destroy')->name('bpr.destroy');
     });
 
-    Route::controller(stasiunTvController::class)->prefix('stasiunTv')->group(function () {
-        Route::get('', 'index')->name('stasiunTv');
-        Route::get('create', 'create')->name('stasiunTv.create');
-        Route::post('store', 'store')->name('stasiunTv.store');
-        Route::get('show/{id}', 'show')->name('stasiunTv.show');
-        Route::get('edit/{id}', 'edit')->name('stasiunTv.edit');
-        Route::put('edit/{id}', 'update')->name('stasiunTv.update');
-        Route::delete('destroy/{id}', 'destroy')->name('stasiunTv.destroy');
+    Route::controller(stasiunTvController::class)->prefix('stasiuntv')->group(function () {
+        Route::get('', 'index')->name('stasiuntv');
+        Route::get('create', 'create')->name('stasiuntv.create');
+        Route::post('store', 'store')->name('stasiuntv.store');
+        Route::get('show/{id}', 'show')->name('stasiuntv.show');
+        Route::get('edit/{id}', 'edit')->name('stasiuntv.edit');
+        Route::put('edit/{id}', 'update')->name('stasiuntv.update');
+        Route::delete('destroy/{id}', 'destroy')->name('stasiuntv.destroy');
     });
 
     Route::get('/profile', [App\Http\Controllers\AuthController::class, 'profile'])->name('profile');

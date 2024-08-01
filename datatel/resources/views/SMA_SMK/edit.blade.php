@@ -27,7 +27,11 @@
     <div class="row">
         <div class="col mb-3">
             <label class="form-label">Status</label>
-            <input name="status" class="form-control" placeholder="Status" value="{{ $sma->status }}">
+            <select class="form-control" name="status">
+                <option value="">-- Pilih Status --</option>
+                <option value="Negeri" {{ $sma->status == 'Negeri' ? 'selected' : '' }}>Negeri</option>
+                <option value="Swasta" {{ $sma->status == 'Swasta' ? 'selected' : '' }}>Swasta</option>
+            </select>
         </div>
         <div class="col mb-3">
             <label class="form-label">Jumlah Siswa</label>

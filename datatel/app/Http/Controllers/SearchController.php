@@ -15,6 +15,7 @@ use App\Models\wisataKuliner;
 use App\Models\pdam;
 use App\Models\perusahaan;
 use App\Models\bpr;
+use App\Models\stasiuntv;
 
 class SearchController extends Controller
 {
@@ -107,6 +108,13 @@ class SearchController extends Controller
                 return $item;
             });
 
+        $stasiuntv = stasiuntv::where('nama_pelanggan', 'LIKE', "%{$query}%")
+            ->get()
+            ->map(function ($item) {
+                $item->type = 'stasiuntv';
+                return $item;
+            });
+
         // Gabungkan semua hasil
         $results = collect()
             ->merge($smas)
@@ -120,6 +128,7 @@ class SearchController extends Controller
             ->merge($pdam)
             ->merge($perusahaan)
             ->merge($bpr)
+            ->merge($stasiuntv)
             ->merge($wisatakuilner);
 
         return view('search.index', ['results' => $results, 'query' => $query]);

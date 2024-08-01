@@ -36,8 +36,10 @@ class ProductController extends Controller
             'id_number' => 'nullable|integer',
             'nama_akun' => 'nullable|string',
             'am' => 'nullable|string',
-            'nipnas' => 'nullable|integer',
+            'nipnas' => 'nullable|string',
             'nama_grup' => 'nullable|string',
+        ], [
+            'id_number.integer' => 'ID Number harus berupa bilangan bulat.',
         ]);
 
         Product::create($data);
@@ -51,7 +53,7 @@ class ProductController extends Controller
     public function show(string $id)
     {
         $product = Product::findOrFail($id);
-  
+
         return view('datapelanggan.show', compact('product'));
     }
 
@@ -61,7 +63,7 @@ class ProductController extends Controller
     public function edit(string $id)
     {
         $product = Product::findOrFail($id);
-  
+
         return view('datapelanggan.edit', compact('product'));
     }
 
@@ -71,9 +73,9 @@ class ProductController extends Controller
     public function update(Request $request, string $id)
     {
         $product = Product::findOrFail($id);
-  
+
         $product->update($request->all());
-  
+
         return redirect()->route('datapelanggan')->with('success', 'Data berhasil di update');
     }
 
@@ -83,9 +85,9 @@ class ProductController extends Controller
     public function destroy(string $id)
     {
         $product = Product::findOrFail($id);
-  
+
         $product->delete();
-  
+
         return redirect()->route('datapelanggan')->with('success', 'Data berhasil di hapus');
     }
 }

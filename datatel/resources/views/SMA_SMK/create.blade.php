@@ -23,7 +23,11 @@
     </div>
     <div class="row mb-3">
         <div class="col">
-            <input type="text" name="status" class="form-control" placeholder="Status">
+            <select class="form-control" name="status">
+                <option value="">-- Pilih Status --</option>
+                <option value="Negeri">Negeri</option>
+                <option value="Swasta">Swasta</option>
+            </select>
         </div>
         <div class="col">
             <input type="text" name="jumlah_siswa" id="jumlah_siswa" class="form-control" placeholder="Jumlah Siswa">

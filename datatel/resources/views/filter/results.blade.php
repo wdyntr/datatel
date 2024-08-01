@@ -58,6 +58,9 @@
                                                 @case('bpr')
                                                     {{ 'BPR' }}
                                                     @break
+                                                @case('stasiuntv')
+                                                    {{ 'Stasiun TV' }}
+                                                    @break
                                                 @default
                                                     {{ class_basename($result) }}
                                             @endswitch

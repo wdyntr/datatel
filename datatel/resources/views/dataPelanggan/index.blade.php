@@ -20,8 +20,6 @@
             <th>ID Number</th>
             <th>Nama Akun</th>
             <th>AM</th>
-            <th>NIPNAS</th>
-            <th>Nama Grup</th>
             <th>Action</th>
         </tr>
     </thead>
@@ -35,11 +33,10 @@
                     <td class="align-middle">{{ $rs->id_number }}</td>
                     <td class="align-middle">{{ $rs->nama_akun }}</td>
                     <td class="align-middle">{{ $rs->am }}</td>
-                    <td class="align-middle">{{ $rs->nipnas }}</td>
-                    <td class="align-middle">{{ $rs->nama_grup }}</td>
                     <td class="align-middle">
                         <div class="btn-group" role="group" aria-label="Basic example">
-                            <a href="{{ route('datapelanggan.show', $rs->id) }}" type="button" class="btn btn-secondary">Detail</a>
+                            <a href="{{ route('datapelanggan.show', $rs->id) }}" type="button"
+                                class="btn btn-secondary">Detail</a>
                             <a href="{{ route('datapelanggan.edit', $rs->id)}}" type="button" class="btn btn-warning">Edit</a>
                             <form action="{{ route('datapelanggan.destroy', $rs->id) }}" method="POST" type="button"
                                 class="btn btn-danger p-0" onsubmit="return confirm('Delete?')">
