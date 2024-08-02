@@ -13,7 +13,7 @@ class BankController extends Controller
      */
     public function index()
     {
-        $bank = bank::orderBy('created_at', 'DESC')->get();
+        $bank = bank::orderBy('created_at', 'DESC')->paginate(10);
 
         return view('bank.index', compact('bank'));
     }

@@ -12,7 +12,7 @@ class bprController extends Controller
      */
     public function index()
     {
-        $bpr = bpr::orderBy('created_at', 'DESC')->get();
+        $bpr = bpr::orderBy('created_at', 'DESC')->paginate(10);
 
         return view('bpr.index', compact('bpr'));
     }

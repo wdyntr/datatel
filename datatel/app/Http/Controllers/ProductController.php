@@ -12,7 +12,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $product = Product::orderBy('created_at', 'DESC')->get();
+        $product = Product::orderBy('created_at', 'DESC')->paginate(10);
 
         return view('datapelanggan.index', compact('product'));
     }

@@ -12,7 +12,7 @@ class faskesController extends Controller
      */
     public function index()
     {
-        $faskes = faskes::orderBy('created_at', 'DESC')->get();
+        $faskes = faskes::orderBy('created_at', 'DESC')->paginate(10);
 
         return view('faskes.index', compact('faskes'));
     }

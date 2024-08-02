@@ -32,7 +32,7 @@
         </div>
         <div class="col mb-3">
             <label class="form-label">Alamat</label>
-            <input type="text" class="form-control" name="alamat" placeholder="Almaat" value="{{ $hotel->alamat }}">
+            <input type="text" class="form-control" name="alamat" placeholder="Alamat" value="{{ $hotel->alamat }}">
         </div>
     </div>
     <div class="row">

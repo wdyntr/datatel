@@ -1,8 +1,10 @@
 @extends('layouts.app')
 
-@section('title', 'Dashboard')
 
 @section('contents')
+<div class="d-flex align-items-center justify-content-between">
+    <h1 class="mb-3">Dashboard</h1>
+</div>
 <div class="row">
 
     <!-- Earnings (Monthly) Card Example -->

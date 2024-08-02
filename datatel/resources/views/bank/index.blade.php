@@ -18,7 +18,7 @@
             <th>Nama Bank</th>
             <th>Alamat</th>
             <th>Kecamatan</th>
-            <th>Kebupaten/Kota</th>
+            <th>Kabupaten/Kota</th>
             <th>AM</th>
             <th>Layanan Telkom</th>
             <th>Action</th>
@@ -35,15 +35,20 @@
                     <td class="align-middle">{{ $rs->{'kabupaten/kota'} }}</td>
                     <td class="align-middle">{{ $rs->am }}</td>
                     <td class="align-middle">{{ $rs->layanan_telkom }}</td>
+
                     <td class="align-middle">
                         <div class="btn-group" role="group" aria-label="Basic example">
-                            <a href="{{ route('bank.show', $rs->id) }}" type="button" class="btn btn-secondary">Detail</a>
-                            <a href="{{ route('bank.edit', $rs->id)}}" type="button" class="btn btn-warning">Edit</a>
-                            <form action="{{ route('bank.destroy', $rs->id) }}" method="POST" type="button"
-                                class="btn btn-danger p-0" onsubmit="return confirm('Delete?')">
+                            <a href="{{ route('bank.show', $rs->id) }}" type="button" class="btn btn-secondary">
+                                <i class="fa fa-eye"></i>
+                            </a>
+                            <a href="{{ route('bank.edit', $rs->id)}}" type="button" class="btn btn-warning">
+                                <i class="fa fa-edit"></i>
+                            </a>
+                            <form action="{{ route('bank.destroy', $rs->id) }}" method="POST"
+                                onsubmit="return confirm('Delete?')" class="btn btn-danger p-0">
                                 @csrf
                                 @method('DELETE')
-                                <button class="btn btn-danger m-0">Delete</button>
+                                <button class="btn btn-danger m-0"><i class="fa fa-trash"></i></button>
                             </form>
                         </div>
                     </td>
@@ -51,9 +56,14 @@
             @endforeach
         @else
             <tr>
-                <td class="text-center" colspan="5">Data tidak ditemukan</td>
+                <td class="text-center" colspan="8">Data tidak ditemukan</td>
             </tr>
         @endif
     </tbody>
 </table>
+
+<!-- Tambahkan link paginasi -->
+<div class="d-flex justify-content-center">
+    {{ $bank->links() }}
+</div>
 @endsection

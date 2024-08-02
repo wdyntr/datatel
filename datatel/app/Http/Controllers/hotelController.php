@@ -12,7 +12,7 @@ class hotelController extends Controller
      */
     public function index()
     {
-        $hotel = hotel::orderBy('created_at', 'DESC')->get();
+        $hotel = hotel::orderBy('created_at', 'DESC')->paginate(10);
 
         return view('hotel.index', compact('hotel'));
     }

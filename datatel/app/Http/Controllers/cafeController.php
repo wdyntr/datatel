@@ -12,7 +12,7 @@ class cafeController extends Controller
      */
     public function index()
     {
-        $cafe = cafe::orderBy('created_at', 'DESC')->get();
+        $cafe = cafe::orderBy('created_at', 'DESC')->paginate(10);
 
         return view('cafe.index', compact('cafe'));
     }
