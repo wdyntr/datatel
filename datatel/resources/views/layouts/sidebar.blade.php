@@ -21,85 +21,86 @@
 
     <li class="nav-item">
         <a class="nav-link" href="{{ route('datapelanggan') }}">
-            <i class="fas fa-fw fa-tachometer-alt"></i>
-            <span>Data Pelanggan</span></a>
+        <i class="fa-solid fa-person"></i>
+        <span>List Data Pelanggan</span>
+    </a>
     </li>
 
     <li class="nav-item">
         <a class="nav-link" href="{{ route('sma_smk') }}">
-            <i class="fas fa-fw fa-tachometer-alt"></i>
-            <span>SMA</span></a>
+        <i class="fa-solid fa-school"></i>
+            <span>List SMA/SMK</span></a>
     </li>
 
     <li class="nav-item">
         <a class="nav-link" href="{{ route('hotel') }}">
-            <i class="fas fa-fw fa-tachometer-alt"></i>
-            <span>Hotel</span></a>
+        <i class="fa-solid fa-hotel"></i>
+            <span>List Hotel</span></a>
     </li>
 
     <li class="nav-item">
         <a class="nav-link" href="{{ route('universitas') }}">
-            <i class="fas fa-fw fa-tachometer-alt"></i>
+        <i class="fa-solid fa-graduation-cap"></i>
             <span>List Universitas</span></a>
     </li>
 
     <li class="nav-item">
         <a class="nav-link" href="{{ route('bank') }}">
-            <i class="fas fa-fw fa-tachometer-alt"></i>
+        <i class="fa-solid fa-building-columns"></i>
             <span>List Bank</span></a>
     </li>
 
     <li class="nav-item">
         <a class="nav-link" href="{{ route('faskes') }}">
-            <i class="fas fa-fw fa-tachometer-alt"></i>
+        <i class="fa-solid fa-notes-medical"></i>
             <span>List Faskes</span></a>
     </li>
 
     <li class="nav-item">
         <a class="nav-link" href="{{ route('cafe') }}">
-            <i class="fas fa-fw fa-tachometer-alt"></i>
+        <i class="fa-solid fa-mug-saucer"></i>
             <span>List Cafe</span></a>
     </li>
 
     <li class="nav-item">
         <a class="nav-link" href="{{ route('wisata_lamsel') }}">
-            <i class="fas fa-fw fa-tachometer-alt"></i>
+        <i class="fa-solid fa-map-location-dot"></i>
             <span>List Wisata LamSel</span></a>
     </li>
 
     <li class="nav-item">
         <a class="nav-link" href="{{ route('wisata_kuliner') }}">
-            <i class="fas fa-fw fa-tachometer-alt"></i>
+        <i class="fa-solid fa-map-location-dot"></i>
             <span>List Wisata kuliner</span></a>
     </li>
 
     <li class="nav-item">
         <a class="nav-link" href="{{ route('pdam') }}">
-            <i class="fas fa-fw fa-tachometer-alt"></i>
+        <i class="fa-solid fa-building"></i>
             <span>List PDAM</span></a>
     </li>
 
     <li class="nav-item">
         <a class="nav-link" href="{{ route('perusahaan') }}">
-            <i class="fas fa-fw fa-tachometer-alt"></i>
+        <i class="fa-solid fa-building-user"></i>
             <span>List Perusahaan</span></a>
     </li>
 
     <li class="nav-item">
         <a class="nav-link" href="{{ route('bpr') }}">
-            <i class="fas fa-fw fa-tachometer-alt"></i>
+        <i class="fa-solid fa-credit-card"></i>
             <span>List BPR</span></a>
     </li>
 
     <li class="nav-item">
         <a class="nav-link" href="{{ route('stasiuntv') }}">
-            <i class="fas fa-fw fa-tachometer-alt"></i>
+        <i class="fa-solid fa-tv"></i>
             <span>List Stasiun TV</span></a>
     </li>
 
     <li class="nav-item">
         <a class="nav-link" href="/profile">
-            <i class="fas fa-fw fa-tachometer-alt"></i>
+        <i class="fa-solid fa-user"></i>
             <span>Profile</span></a>
     </li>
 

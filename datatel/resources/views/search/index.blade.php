@@ -20,11 +20,32 @@
         </tr>
     </thead>
     <tbody>
+        @php
+            $typeLabels = [
+                'datapelanggan' => 'Data Pelanggan',
+                'wisata_lamsel' => 'Wisata Lamsel',
+                'Bank' => 'Bank',
+                'Faskes' => 'Fasilitas Kesehatan',
+                'Cafe' => 'Cafe',
+                'Hotel' => 'Hotel',
+                'Universitas' => 'Universitas',
+                'wisata_lamsel' => 'Wisata Lamsel',
+                'wisata_kuliner' => 'Wisata Kuliner',
+                'pdam' => 'PDAM',
+                'perusahaan' => 'Perusahaan',
+                'bpr' => 'BPR',
+                'stasiuntv' => 'Stasiun TV',
+                'sma_smk' => 'SMA/SMK',
+            ];
+        @endphp
+
         @if($results->count() > 0)
             @foreach($results as $result)
                 <tr>
                     <td class="align-middle">{{ $loop->iteration }}</td>
-                    <td class="align-middle">{{ ucfirst(preg_replace('/([a-z])([A-Z])/', '$1 $2', $result->type)) }}</td>
+                    <td class="align-middle">
+                        {{ $typeLabels[$result->type] ?? ucfirst(preg_replace('/([a-z])([A-Z])/', '$1 $2', $result->type)) }}
+                    </td>
                     <td class="align-middle">{{ $result->display_name }}</td>
                     <td class="align-middle">
                         <div class="btn-group" role="group" aria-label="Basic example">
