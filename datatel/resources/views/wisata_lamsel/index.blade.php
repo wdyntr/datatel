@@ -39,14 +39,17 @@
                     <td class="align-middle">{{ $rs->jenis_layanan }}</td>
                     <td class="align-middle">
                         <div class="btn-group" role="group" aria-label="Basic example">
-                            <a href="{{ route('wisata_lamsel.show', $rs->id) }}" type="button"
-                                class="btn btn-secondary">Detail</a>
-                            <a href="{{ route('wisata_lamsel.edit', $rs->id)}}" type="button" class="btn btn-warning">Edit</a>
-                            <form action="{{ route('wisata_lamsel.destroy', $rs->id) }}" method="POST" type="button"
-                                class="btn btn-danger p-0" onsubmit="return confirm('Delete?')">
+                            <a href="{{ route('wisata_lamsel.show', $rs->id) }}" type="button" class="btn btn-secondary">
+                                <i class="fa fa-eye"></i>
+                            </a>
+                            <a href="{{ route('wisata_lamsel.edit', $rs->id)}}" type="button" class="btn btn-warning">
+                                <i class="fa fa-edit"></i>
+                            </a>
+                            <form action="{{ route('wisata_lamsel.destroy', $rs->id) }}" method="POST"
+                                onsubmit="return confirm('Delete?')" class="btn btn-danger p-0">
                                 @csrf
                                 @method('DELETE')
-                                <button class="btn btn-danger m-0">Delete</button>
+                                <button class="btn btn-danger m-0"><i class="fa fa-trash"></i></button>
                             </form>
                         </div>
                     </td>
@@ -59,4 +62,9 @@
         @endif
     </tbody>
 </table>
+
+<!-- Tambahkan link paginasi -->
+<div class="d-flex justify-content-center">
+    {{ $wisata_lamsel->links() }}
+</div>
 @endsection

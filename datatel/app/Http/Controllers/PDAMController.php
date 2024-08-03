@@ -12,7 +12,7 @@ class PDAMController extends Controller
      */
     public function index()
     {
-        $pdam = pdam::orderBy('created_at', 'DESC')->get();
+        $pdam = pdam::orderBy('created_at', 'DESC')->paginate(10);
 
         return view('pdam.index', compact('pdam'));
     }

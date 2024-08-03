@@ -12,7 +12,7 @@ class wisata_lamselController extends Controller
      */
     public function index()
     {
-        $wisata_lamsel = wisata_lamsel::orderBy('created_at', 'DESC')->get();
+        $wisata_lamsel = wisata_lamsel::orderBy('created_at', 'DESC')->paginate(10);
 
         return view('wisata_lamsel.index', compact('wisata_lamsel'));
     }

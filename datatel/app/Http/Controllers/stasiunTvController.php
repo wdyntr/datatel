@@ -12,7 +12,7 @@ class stasiuntvController extends Controller
      */
     public function index()
     {
-        $stasiuntv = stasiuntv::orderBy('created_at', 'DESC')->get();
+        $stasiuntv = stasiuntv::orderBy('created_at', 'DESC')->paginate(10);
 
         return view('stasiuntv.index', compact('stasiuntv'));
     }

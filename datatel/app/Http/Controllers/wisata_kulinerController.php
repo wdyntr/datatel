@@ -12,7 +12,7 @@ class wisata_kulinerController extends Controller
      */
     public function index()
     {
-        $wisataKuliner = wisataKuliner::orderBy('created_at', 'DESC')->get();
+        $wisataKuliner = wisataKuliner::orderBy('created_at', 'DESC')->paginate(10);
 
         return view('wisata_kuliner.index', compact('wisataKuliner'));
     }

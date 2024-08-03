@@ -12,7 +12,7 @@ class smaController extends Controller
      */
     public function index()
     {
-        $sma = Sma::orderBy('created_at', 'DESC')->get();
+        $sma = Sma::orderBy('created_at', 'DESC')->paginate(10);
 
         return view('sma_smk.index', compact('sma'));
     }

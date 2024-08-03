@@ -12,7 +12,7 @@ class univController extends Controller
      */
     public function index()
     {
-        $univ = univ::orderBy('created_at', 'DESC')->get();
+        $univ = univ::orderBy('created_at', 'DESC')->paginate(10);
 
         return view('universitas.index', compact('univ'));
     }

@@ -12,7 +12,7 @@ class PtController extends Controller
      */
     public function index()
     {
-        $perusahaan = perusahaan::orderBy('created_at', 'DESC')->get();
+        $perusahaan = perusahaan::orderBy('created_at', 'DESC')->paginate(10);
 
         return view('perusahaan.index', compact('perusahaan'));
     }
