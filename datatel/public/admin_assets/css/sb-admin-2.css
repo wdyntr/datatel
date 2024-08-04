@@ -10465,6 +10465,7 @@ a:focus {
 }
 
 .sidebar .sidebar-brand .sidebar-brand-text {
+  font-size: 14px;
   display: none;
 }
 
