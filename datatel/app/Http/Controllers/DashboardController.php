@@ -49,7 +49,7 @@ class DashboardController extends Controller
         $min10 = \App\Models\stasiuntv::whereIn('status_berlangganan', ['belum', 'tidak aktif'])->count();
 
         // Menghitung total jumlah pelanggan berlangganan
-        $jumlah = $count1 + $count2 + $count3 + $count4 + $count5 + $count6 + $count7 + $count8 + $count9 + $count10;
+        $jumlah = $count1 + $count2 + $count3 + $count4 + $count5 + $count6 + $count7 + $count8 + $count9 + $count10 + $totalCount;
         $total = $min1 + $min2 + $min3 + $min4 + $min5 + $min6 + $min7 + $min8 + $min9 + $min10;
         // Mengirim data ke view
         return view('dashboard', compact('jumlah', 'totalCount', 'total'));
