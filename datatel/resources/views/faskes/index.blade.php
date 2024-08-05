@@ -21,7 +21,6 @@
             <th>Nama Puskesmas</th>
             <th>Treg</th>
             <th>Witel</th>
-            <th>Alamat</th>
             <th>Kecamatan</th>
             <th>Kabupaten</th>
             <th>Action</th>
@@ -36,7 +35,6 @@
                     <td class="align-middle">{{ $rs->nama_puskes }}</td>
                     <td class="align-middle">{{ $rs->treg }}</td>
                     <td class="align-middle">{{ $rs->witel }}</td>
-                    <td class="align-middle">{{ $rs->alamat }}</td>
                     <td class="align-middle">{{ $rs->kecamatan }}</td>
                     <td class="align-middle">{{ $rs->kabupaten }}</td>
                     <td class="align-middle">
