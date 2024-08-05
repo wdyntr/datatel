@@ -29,7 +29,6 @@
                 'Cafe' => 'Cafe',
                 'Hotel' => 'Hotel',
                 'Universitas' => 'Universitas',
-                'wisata_lamsel' => 'Wisata Lamsel',
                 'wisata_kuliner' => 'Wisata Kuliner',
                 'pdam' => 'PDAM',
                 'perusahaan' => 'Perusahaan',
@@ -49,13 +48,15 @@
                     <td class="align-middle">{{ $result->display_name }}</td>
                     <td class="align-middle">
                         <div class="btn-group" role="group" aria-label="Basic example">
-                            <a href="{{ route(strtolower($result->type) . '.show', $result->id) }}" type="button" class="btn btn-secondary">Detail</a>
-                            <a href="{{ route(strtolower($result->type) . '.edit', $result->id)}}" type="button" class="btn btn-warning">Edit</a>
-                            <form action="{{ route(strtolower($result->type) . '.destroy', $result->id) }}" method="POST" type="button"
-                                class="btn btn-danger p-0" onsubmit="return confirm('Delete?')">
+                            <a href="{{ route(strtolower($result->type) . '.show', $result->id) }}" type="button"
+                                class="btn btn-secondary"><i class="fa fa-eye"></i></a>
+                            <a href="{{ route(strtolower($result->type) . '.edit', $result->id)}}" type="button"
+                                class="btn btn-warning"><i class="fa fa-edit"></i></a>
+                            <form action="{{ route(strtolower($result->type) . '.destroy', $result->id) }}" method="POST"
+                                type="button" class="btn btn-danger p-0" onsubmit="return confirm('Delete?')">
                                 @csrf
                                 @method('DELETE')
-                                <button class="btn btn-danger m-0">Delete</button>
+                                <button class="btn btn-danger m-0"><i class="fa fa-trash"></i></button>
                             </form>
                         </div>
                     </td>
