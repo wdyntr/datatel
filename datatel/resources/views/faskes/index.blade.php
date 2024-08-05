@@ -1,7 +1,5 @@
 @extends('layouts.app')
 
-@section('title', 'Fasilitas Kesehatan')
-
 @section('contents')
 <div class="d-flex align-items-center justify-content-between">
     <h1 class="mb-0">List Data Puskesmas</h1>
