@@ -61,6 +61,23 @@
             <input type="text" class="form-control" name="layanan_telkom" placeholder="Layanan Telkom Eksisting">
         </div>
     </div>
+
+    <div class="row mb-3">
+        <div class="col">
+            <input type="text" name="titik_koordinat" class="form-control" placeholder="Titik Koordinat Pelanggan">
+        </div>
+        <div class="col">
+            <input type="text" class="form-control" name="jarak" placeholder="Jarak Pelanggan ke ODP">
+        </div>
+        <div class="col">
+            <select class="form-control" name="layak_tidak">
+                <option value="">-- Pilih Layak/Tidak --</option>
+                <option value="Layak">Layak</option>
+                <option value="Tidak Layak">Tidak Layak</option>
+            </select>
+        </div>
+    </div>
+
     <div class="row">
         <div class="d-grid">
             <button type="submit" class="btn btn-primary">Submit</button>

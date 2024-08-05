@@ -77,6 +77,29 @@
                 value="{{ $sma->layanan_telkom }}">
         </div>
     </div>
+
+    <div class="row mb-3">
+        <div class="col">
+            <label class="form-label">Titik Koordinat</label>
+            <input type="text" name="titik_koordinat" class="form-control" placeholder="Titik Koordinat Pelanggan"
+                value="{{ $sma->titik_koordinat }}">
+        </div>
+        <div class="col">
+            <label class="form-label">Jarak Pelanggan ke ODP</label>
+
+            <input type="text" class="form-control" name="jarak" placeholder="Jarak Pelanggan ke ODP"
+                value="{{ $sma->jarak }}">
+        </div>
+        <div class="col">
+            <label class="form-label">Layak/Tidak Layak</label>
+            <select class="form-control" name="layak_tidak">
+                <option value="">-- Pilih Layak/Tidak --</option>
+                <option value="Layak" {{ $sma->layak_tidak == 'Layak' ? 'selected' : '' }}>Layak</option>
+                <option value="Tidak Layak" {{ $sma->layak_tidak == 'Tidak Layak' ? 'selected' : '' }}>Tidak Layak
+                </option>
+            </select>
+        </div>
+    </div>
     <div class="row">
         <div class="d-grid">
             <button class="btn btn-warning">Update</button>

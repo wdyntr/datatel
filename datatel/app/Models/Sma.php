@@ -22,6 +22,9 @@ class Sma extends Model
         'jaringan_optik',
         'odp',
         'layanan_telkom',
+        'titik_koordinat',
+        'jarak',
+        'layak_tidak',
     ];
 
     public function getDisplayNameAttribute()

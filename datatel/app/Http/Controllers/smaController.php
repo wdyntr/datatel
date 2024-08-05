@@ -41,6 +41,9 @@ class smaController extends Controller
             'jaringan_optik' => 'nullable|string',
             'odp' => 'nullable|string',
             'layanan_telkom' => 'nullable|string',
+            'titik_koordinat' => 'nullable|string',
+            'jarak' => 'nullable|string',
+            'layak_tidak' => 'nullable|string',
         ], [
             'jumlah_siswa.integer' => 'Jumlah siswa harus berupa bilangan bulat.',
         ]);
@@ -86,6 +89,9 @@ class smaController extends Controller
             'jaringan_optik' => 'nullable|string',
             'odp' => 'nullable|string',
             'layanan_telkom' => 'nullable|string',
+            'titik_koordinat' => 'nullable|string',
+            'jarak' => 'nullable|string',
+            'layak_tidak' => 'nullable|string',
         ], [
             'jumlah_siswa.integer' => 'Jumlah siswa harus berupa bilangan bulat.',
         ]);
