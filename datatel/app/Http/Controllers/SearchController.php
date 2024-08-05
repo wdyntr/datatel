@@ -34,6 +34,9 @@ class SearchController extends Controller
             ->orWhere('jaringan_optik', 'LIKE', "%{$query}%")
             ->orWhere('odp', 'LIKE', "%{$query}%")
             ->orWhere('layanan_telkom', 'LIKE', "%{$query}%")
+            ->orWhere('titik_koordinat', 'LIKE', "%{$query}%")
+            ->orWhere('jarak', 'LIKE', "%{$query}%")
+            ->orWhere('layak_tidak', 'LIKE', "%{$query}%")
             ->get()
             ->map(function ($item) {
                 $item->type = 'sma_smk';
