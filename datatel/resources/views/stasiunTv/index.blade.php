@@ -22,7 +22,6 @@
             <th>Alamat</th>
             <th>Kecamatan</th>
             <th>Kabupaten</th>
-            <th>Provinsi</th>
             <th>Action</th>
         </tr>
     </thead>
@@ -36,7 +35,6 @@
                     <td class="align-middle">{{ $rs->alamat }}</td>
                     <td class="align-middle">{{ $rs->kecamatan }}</td>
                     <td class="align-middle">{{ $rs->kabupaten }}</td>
-                    <td class="align-middle">{{ $rs->provinsi }}</td>
                     <td class="align-middle">
                         <div class="btn-group" role="group" aria-label="Basic example">
                             <a href="{{ route('stasiuntv.show', $rs->id) }}" type="button" class="btn btn-secondary">

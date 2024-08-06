@@ -88,4 +88,15 @@
         </div>
     </div>
 </div>
+
+<!-- Export Button -->
+<div class="row">
+    <div class="col-xl-12 col-md-12 mb-4">
+        <div class="card border-left-primary shadow h-100 py-2">
+            <div class="card-body">
+                <a href="{{ route('export.excel') }}" class="btn btn-success">Export Data Ke Excel</a>
+            </div>
+        </div>
+    </div>
+</div>
 @endsection

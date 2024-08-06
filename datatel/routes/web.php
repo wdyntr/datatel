@@ -15,7 +15,8 @@ use App\Http\Controllers\wisata_kulinerController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PtController;
 use App\Http\Controllers\bprController;
-use App\Http\Controllers\stasiunTvController;
+use App\Http\Controllers\StasiunTvController;
+use App\Http\Controllers\ExportController;
 
 Route::get('/', function () {
     // return view('welcome');
@@ -37,6 +38,9 @@ Route::controller(AuthController::class)->group(function () {
 Route::middleware('auth')->group(function () {
     Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::get('/filter', [DashboardController::class, 'filter'])->name('filter');
+
+    Route::get('/export-excel', [ExportController::class, 'exportExcel'])->name('export.excel');
+
 
     Route::get('/search', [App\Http\Controllers\SearchController::class, 'index'])->name('search.index');
 
@@ -160,7 +164,7 @@ Route::middleware('auth')->group(function () {
         Route::delete('destroy/{id}', 'destroy')->name('bpr.destroy');
     });
 
-    Route::controller(stasiunTvController::class)->prefix('stasiuntv')->group(function () {
+    Route::controller(StasiunTvController::class)->prefix('stasiuntv')->group(function () {
         Route::get('', 'index')->name('stasiuntv');
         Route::get('create', 'create')->name('stasiuntv.create');
         Route::post('store', 'store')->name('stasiuntv.store');

@@ -3,16 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\stasiuntv;
+use App\Models\StasiunTv;
 
-class stasiuntvController extends Controller
+class StasiuntvController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $stasiuntv = stasiuntv::orderBy('created_at', 'DESC')->paginate(10);
+        $stasiuntv = StasiunTv::orderBy('created_at', 'DESC')->paginate(10);
 
         return view('stasiuntv.index', compact('stasiuntv'));
     }
@@ -49,7 +49,7 @@ class stasiuntvController extends Controller
 
         ]);
 
-        stasiuntv::create($data);
+        StasiunTv::create($data);
 
         return redirect()->route('stasiuntv')->with('success', 'Data berhasil ditambahkan!');
     }
@@ -59,7 +59,7 @@ class stasiuntvController extends Controller
      */
     public function show(string $id)
     {
-        $stasiuntv = stasiuntv::findOrFail($id);
+        $stasiuntv = StasiunTv::findOrFail($id);
 
         return view('stasiuntv.show', compact('stasiuntv'));
     }
@@ -69,7 +69,7 @@ class stasiuntvController extends Controller
      */
     public function edit(string $id)
     {
-        $stasiuntv = stasiuntv::findOrFail($id);
+        $stasiuntv = StasiunTv::findOrFail($id);
 
         return view('stasiuntv.edit', compact('stasiuntv'));
     }
@@ -79,7 +79,7 @@ class stasiuntvController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $stasiuntv = stasiuntv::findOrFail($id);
+        $stasiuntv = StasiunTv::findOrFail($id);
 
         $stasiuntv->update($request->all());
 
@@ -91,7 +91,7 @@ class stasiuntvController extends Controller
      */
     public function destroy(string $id)
     {
-        $stasiuntv = stasiuntv::findOrFail($id);
+        $stasiuntv = StasiunTv::findOrFail($id);
 
         $stasiuntv->delete();
 

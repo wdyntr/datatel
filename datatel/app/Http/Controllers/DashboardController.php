@@ -15,7 +15,7 @@ use App\Models\wisataKuliner;
 use App\Models\pdam;
 use App\Models\perusahaan;
 use App\Models\bpr;
-use App\Models\stasiunTv;
+use App\Models\StasiunTv;
 
 class DashboardController extends Controller
 {
@@ -34,7 +34,7 @@ class DashboardController extends Controller
         $count7 = \App\Models\pdam::whereIn('status_berlangganan', ['sudah', 'aktif'])->count();
         $count8 = \App\Models\perusahaan::whereIn('status_berlangganan', ['sudah', 'aktif'])->count();
         $count9 = \App\Models\bpr::whereIn('status_berlangganan', ['sudah', 'aktif'])->count();
-        $count10 = \App\Models\stasiuntv::whereIn('status_berlangganan', ['sudah', 'aktif'])->count();
+        $count10 = \App\Models\Stasiuntv::whereIn('status_berlangganan', ['sudah', 'aktif'])->count();
 
         // Menghitung jumlah pelanggan berlangganan dari tabel-tabel yang berbeda
         $min1 = \App\Models\bank::whereIn('layanan_telkom', ['belum', 'tidak aktif'])->count();
@@ -46,7 +46,7 @@ class DashboardController extends Controller
         $min7 = \App\Models\pdam::whereIn('status_berlangganan', ['belum', 'tidak aktif'])->count();
         $min8 = \App\Models\perusahaan::whereIn('status_berlangganan', ['belum', 'tidak aktif'])->count();
         $min9 = \App\Models\bpr::whereIn('status_berlangganan', ['belum', 'tidak aktif'])->count();
-        $min10 = \App\Models\stasiuntv::whereIn('status_berlangganan', ['belum', 'tidak aktif'])->count();
+        $min10 = \App\Models\Stasiuntv::whereIn('status_berlangganan', ['belum', 'tidak aktif'])->count();
 
         // Menghitung total jumlah pelanggan berlangganan
         $jumlah = $count1 + $count2 + $count3 + $count4 + $count5 + $count6 + $count7 + $count8 + $count9 + $count10 + $totalCount;
