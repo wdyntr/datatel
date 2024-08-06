@@ -1,12 +1,11 @@
 <?php
 
-
-// app/Exports/SpecificTablesExport.php
 namespace App\Exports;
 
 use Maatwebsite\Excel\Concerns\Exportable;
 use Maatwebsite\Excel\Concerns\WithMultipleSheets;
 use Maatwebsite\Excel\Concerns\WithTitle;
+use Maatwebsite\Excel\Concerns\WithHeadings;
 use Illuminate\Support\Facades\DB;
 use Maatwebsite\Excel\Concerns\FromQuery;
 
@@ -35,14 +34,14 @@ class SpecificTablesExport implements WithMultipleSheets
         $sheets = [];
 
         foreach ($this->tables as $table) {
-            $sheets[$table] = new TableSheetExport($table);
+            $sheets[] = new TableSheetExport($table);
         }
 
         return $sheets;
     }
 }
 
-class TableSheetExport implements FromQuery, WithTitle
+class TableSheetExport implements FromQuery, WithTitle, WithHeadings
 {
     protected $tableName;
 
@@ -58,6 +57,13 @@ class TableSheetExport implements FromQuery, WithTitle
 
     public function title(): string
     {
-        return $this->tableName;
+        return ucfirst($this->tableName); // Capitalize table name for sheet title
+    }
+
+    public function headings(): array
+    {
+        // Fetch column names dynamically or set them manually based on table structure
+        $columns = DB::getSchemaBuilder()->getColumnListing($this->tableName);
+        return $columns;
     }
 }
